@@ -1,0 +1,160 @@
+.project-details {
+    background: linear-gradient(135deg, rgba(13, 11, 44, 0.5), rgba(181, 81, 199, 0.5), rgba(59, 50, 151, 0.5));
+    border-radius: 15px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour un effet de profondeur */
+    padding: 30px; /* Espacement intérieur */
+    margin: 290px auto; /* Espacement extérieur centré */
+    max-width: 85vh; /* Largeur maximale pour garder les détails uniformes */
+    width: calc(100% - 40px); /* Largeur par défaut avec marge de 20px de chaque côté */
+    text-align: center; /* Centrer le texte */
+    box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur totale */
+    color: #fff; /* Couleur de texte blanche pour contraste */
+    position: relative; /* Position relative pour les éléments positionnés absolument */
+}
+
+.project-details h2 {
+    font-family: "The Girl Next Door", cursive;
+    font-weight: 400;
+    font-style: normal; 
+    font-size: 2rem; /* Taille de police pour le titre */
+    margin: 20px 0; /* Espacement au-dessus et en dessous du titre */
+}
+
+.project-details img {
+    width: 100%; /* Image prend toute la largeur du conteneur */
+    max-width: 60vh; /* Largeur maximale de l'image */
+    height: auto; /* Hauteur automatique pour garder les proportions */
+    border-radius: 10px; /* Coins légèrement arrondis pour les images */
+    margin: 20px 0; /* Espacement au-dessus et en dessous de l'image */
+}
+
+.project-details p {
+    font-family: "Courgette", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem; /* Taille de police pour le texte */
+    color: #ddd; /* Couleur de texte gris clair */
+    margin-bottom: 15px; /* Espacement au-dessous du texte */
+}
+
+.project-details .project-description {
+    font-family: "Courgette", cursive;
+    font-weight: 700; /* Texte en gras */
+    font-size: 1.8rem; /* Taille de police plus grande */
+    background: linear-gradient(100deg, #B551C7, white, #3B3297); /* Dégradé de couleurs */
+    -webkit-background-clip: text; /* Nécessaire pour le dégradé de texte */
+    -webkit-text-fill-color: transparent; /* Nécessaire pour le dégradé de texte */
+    background-clip: text; /* Nécessaire pour le dégradé de texte */
+    color: transparent; /* Nécessaire pour le dégradé de texte */
+}
+
+.project-details .skills {
+    font-weight: bold; /* Texte en gras pour les compétences */
+    color: #fff; /* Couleur de texte blanche */
+    margin-top: 10px; /* Espacement au-dessus des compétences */
+    font-size: 1.5rem; /* Taille de police pour les compétences */
+}
+
+.project-details .skills-description {
+    color: white; /* Couleur de texte blanc */
+    margin-top: 15px; /* Espacement au-dessus de la description des compétences */
+    font-size: 1.8rem; /* Taille de police pour la description des compétences */
+    font-family: "LXGW WenKai TC", cursive;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.project-details a {
+    display: inline-block; /* Affichage en ligne pour le lien */
+    padding: 20px; /* Espacement intérieur pour le lien */
+    background-color: #6533BD; /* Couleur de fond du lien */
+    font-size: 1.2rem; /* Taille de police pour le lien */
+    color: #fff; /* Couleur de texte du lien */
+    border-radius: 10px; /* Coins arrondis pour le lien */
+    text-decoration: none; /* Pas de soulignement */
+    transition: background-color 0.5s ease-in-out; /* Effet de transition pour le changement de couleur */
+    margin: 30px 15px 15px 15px; /* Espacement autour du lien */
+    font-family: "Courgette", cursive;
+}
+
+.project-details a:hover {
+    background-color: #CD7DD1; /* Changement de couleur au survol */
+}
+
+.project-details .skills-label {
+    color: #2A1D6A; /* Couleur spécifique pour le label "Compétences" */
+}
+
+/* Media queries pour la réactivité */
+
+/* Pour les écrans de tablettes */
+@media (max-width: 1024px) {
+    .project-details {
+        margin: 150px auto;
+        padding: 20px;
+    }
+    .project-details h2 {
+        font-size: 1.8rem;
+    }
+    .project-details p,
+    .project-details .skills-description {
+        font-size: 1.3rem;
+    }
+    .project-details .project-description {
+        font-size: 1.6rem;
+    }
+    .project-details a {
+        padding: 15px;
+        font-size: 1rem;
+    }
+}
+
+/* Pour les petits écrans */
+@media (max-width: 768px) {
+    .project-details {
+        margin: 100px auto;
+        padding: 15px;
+    }
+    .project-details h2 {
+        font-size: 1.5rem;
+    }
+    .project-details img {
+        max-width: 50vh;
+    }
+    .project-details p,
+    .project-details .skills-description {
+        font-size: 1.2rem;
+    }
+    .project-details .project-description {
+        font-size: 1.4rem;
+    }
+    .project-details a {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Pour les très petits écrans */
+@media (max-width: 480px) {
+    .project-details {
+        margin: 50px auto;
+        padding: 10px;
+    }
+    .project-details h2 {
+        font-size: 1.2rem;
+    }
+    .project-details img {
+        max-width: 40vh;
+    }
+    .project-details p,
+    .project-details .skills-description {
+        font-size: 1rem;
+    }
+    .project-details .project-description {
+        font-size: 1.2rem;
+    }
+    .project-details a {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,10 @@
+// Utilisation des styles globaux ou communs avec namespaces
+@use './Header.scss' as header;
+@use './Footer.scss' as footer;
+@use './Loader.scss' as loader;
+@use './ProjectCard.scss' as card;
+
+// Utilisation des styles spécifiques aux pages avec namespaces
+@use './ProjectsPage.scss' as projectsPage;
+@use './ProjectDetails.scss' as projectDetails;
+@use './ContactPage.scss' as contactPage;

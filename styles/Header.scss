@@ -1,0 +1,122 @@
+.header {
+  background: linear-gradient(135deg, #1E293B, #64748B, #0F172A); /* Couleurs plus sobres */
+  color: #F1F5F9; /* Texte plus clair pour un meilleur contraste */
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Vibur", cursive;
+  font-weight: 400;
+  font-style: normal;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.3s ease, opacity 0.3s ease;
+  opacity: 0.8; /* Légère transparence */
+}
+
+.header:hover {
+  opacity: 1; /* Plus opaque au survol */
+}
+
+.header .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #E2E8F0; /* Couleur de la marque légèrement atténuée */
+}
+
+.header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+}
+
+.header nav ul li a {
+  color: #CBD5E1; /* Couleur du texte douce et harmonieuse */
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  transition: color 0.3s ease, background 0.3s ease;
+  font-family: "Vibur", cursive;
+  position: relative;
+  border-radius: 5px;
+}
+
+.header nav ul li a:hover {
+  color: #F1F5F9; /* Texte plus clair au survol */
+  background-color: rgba(99, 102, 241, 0.2); /* Arrière-plan au survol */
+}
+
+.header nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 3px;
+  width: 0;
+  background-color: #4F46E5; /* Ligne fine en violet */
+  transition: width 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+.header nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .header {
+    padding: 10px 0;
+  }
+
+  .header .logo {
+    font-size: 1.5rem;
+  }
+
+  .header nav ul {
+    gap: 1rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 8px 0;
+    position: relative;
+  }
+
+  .header .logo {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+
+  .header nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 6px 0;
+  }
+
+  .header .logo {
+    font-size: 1.2rem;
+  }
+
+  .header nav ul li a {
+    padding: 6px;
+    font-size: 0.9rem;
+  }
+
+  .header nav ul li a::after {
+    height: 2px;
+  }
+}

@@ -1,0 +1,285 @@
+/* Styles pour le conteneur de bienvenue */
+.welcome-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  min-height: 94vh;
+  top: 150px;
+}
+
+.background-image {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.5; /* Ajustez l'opacité pour obtenir l'effet souhaité */
+}
+
+.welcome-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  background: linear-gradient(135deg, rgba(13, 11, 44, 0.5), rgba(181, 81, 199, 0.5), rgba(59, 50, 151, 0.5));
+  padding: 20px;
+  border-radius: 10px;
+  height: 45vh;
+  bottom: 35px;
+}
+
+.welcome-section {
+  text-align: left;
+  color: #D2B0E9;
+  font-family: 'Sue Ellen Francisco', cursive;
+  font-weight: 400;
+  font-style: normal;
+  flex: 1;
+  width: 15vh;
+  position: relative;
+  left: 50px;
+}
+
+.welcome-section h1 {
+  font-size: 5rem;
+  display: inline-block;
+  position: relative;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.welcome-section h1.loading {
+  opacity: 0;
+}
+
+.welcome-section p {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.welcome-image {
+  flex: 1;
+  text-align: center;
+  min-width: 300px;
+}
+
+.welcome-image img {
+  width: 65%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.wave {
+  display: inline-block;
+  animation: wave-animation 2s infinite;
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave-animation {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Styles pour la section de présentation */
+.about-section {
+  background-color: #070717;
+  padding: 20px 0 200px 0;
+  border-radius: 10px;
+  margin-top: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'LXGW WenKai TC', cursive;
+  font-weight: 700;
+  font-style: normal;
+  color: #3B3297;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('/Portfolio/images/Violet.jpg'); /* Remplacez par l'URL de votre image de fond */
+  background-size: cover;
+}
+
+.about-section h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: white; /* Utilisation de la même couleur pour la cohérence */
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  flex-direction: row;
+}
+
+.about-text {
+  width: 60%;
+}
+
+.about-text p {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+.about-image {
+  width: 30%;
+  margin-left: 20px;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Média queries pour la réactivité */
+@media (min-width: 2256px) {
+  .welcome-image img {
+    max-width: 50%;
+  }
+}
+@media (max-width: 1440px) {
+  
+  .about-text p {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 1024px) {
+  .welcome-section h1 {
+    font-size: 4rem;
+  }
+
+  .welcome-section p {
+    font-size: 1.5rem;
+  }
+
+  .about-section h2 {
+    font-size: 2.5rem;
+  }
+
+  .about-text p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome-content {
+    flex-direction: column;
+    text-align: center;
+    bottom: 15vh;
+  }
+
+  .welcome-section, .welcome-image {
+    min-width: 100%;
+    padding: 0 20px;
+  }
+
+  .welcome-image img {
+    width: 50%;
+  }
+
+  .welcome-section {
+    left: 0;
+  }
+
+  .welcome-section h1 {
+    font-size: 3rem;
+  }
+
+  .welcome-section p {
+    font-size: 1.5rem;
+  }
+
+  .about-section h2 {
+    font-size: 2rem;
+  }
+
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-text, .about-image {
+    width: 100%;
+    margin-left: 0;
+  }
+  .about-image {
+     margin-top: 20px;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .about-text p {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-container {
+    padding: 20px;
+    top: 100px;
+    
+  }
+
+  .welcome-section h1 {
+    font-size: 2rem;
+  }
+
+  .welcome-section p {
+    font-size: 1rem;
+  }
+  
+
+  .about-section {
+    padding: 10px 0 100px 0;
+  }
+
+  .about-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+}
+/* Animation pour masquer le texte */
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Animation pour afficher le texte */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Applique l'animation de masquage */
+.welcome-section h1.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+
+/* Applique l'animation d'affichage */
+.welcome-section h1.fade-in {
+  animation: fadeIn 0.5s forwards;
+}
