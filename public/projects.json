@@ -3,7 +3,7 @@
         "id": 1,
         "title": "Booki",
         "description": "Créez la page d'accueil d'une agence de voyage avec HTML & CSS",
-        "imageUrl": "/Portfolio/images/image1.png",
+        "imageUrl": "public/Portfolio/images/booki_mockup.png",
         "link": "https://github.com/Wesley971/Booki",
         "skills": "HTML, CSS, Design responsive",
         "skillsDescription": "Dans ce projet, j'ai appris à structurer une page HTML de manière sémantique et à utiliser CSS pour créer une mise en page responsive adaptée à différents types d'appareils."

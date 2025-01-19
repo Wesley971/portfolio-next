@@ -12,6 +12,10 @@
     "next": "15.1.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "sass": "^1.83.4"
+    "react-slick": "^0.30.3",
+    "react-tsparticles": "^2.12.2",
+    "sass": "^1.83.4",
+    "slick-carousel": "^1.8.1",
+    "tsparticles": "^3.7.1"
   }
 }

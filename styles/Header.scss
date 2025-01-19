@@ -9,7 +9,7 @@
   font-weight: 400;
   font-style: normal;
   width: 100%;
-  position: fixed;
+  position: relative;
   top: 0;
   z-index: 1000;
   transition: background 0.3s ease, opacity 0.3s ease;
@@ -21,6 +21,7 @@
 }
 
 .header .logo {
+  display: flex;
   font-size: 1.8rem;
   font-weight: bold;
   color: #E2E8F0; /* Couleur de la marque légèrement atténuée */

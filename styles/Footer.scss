@@ -11,6 +11,8 @@ footer {
     box-sizing: border-box;
     transition: opacity 0.3s ease; /* Transition pour l'opacité */
     opacity: 0.3; /* Opacité initiale pour rendre le footer transparent */
+    position: relative;
+    bottom: 0;
 }
 
 footer:hover {
