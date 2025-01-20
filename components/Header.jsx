@@ -4,12 +4,16 @@ const Header = () => {
     return (
         <header className="header">
             <div className="logo">
-                <img src="/Logo/logo.png" alt="Logo" />
-                <h1>Mon Portfolio</h1>
+                {/* Enveloppe l'image dans le composant Link pour rediriger vers la page d'accueil */}
+                <Link href="/">
+                    
+                        <img src="/Logo/logo.png" alt="Logo" />
+                    
+                </Link>
             </div>
             <nav>
                 <ul>
-                    <li><Link href="/">Home</Link></li>
+                    <li><Link href="/">Accueil</Link></li>
                     <li><Link href="/projects">Mes projets</Link></li>
                     <li><Link href="/contact">Contact</Link></li>
                 </ul>

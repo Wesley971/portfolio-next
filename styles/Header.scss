@@ -1,30 +1,35 @@
 .header {
-  background: linear-gradient(135deg, #1E293B, #64748B, #0F172A); /* Couleurs plus sobres */
+  background: linear-gradient(135deg, black,black, #1B0D1C); /* Couleurs plus sobres */ //#291527// couleur violet foncé
   color: #F1F5F9; /* Texte plus clair pour un meilleur contraste */
   padding: 15px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: "Vibur", cursive;
+  font-family: 'Manrope', sans-serif;
   font-weight: 400;
   font-style: normal;
   width: 100%;
   position: relative;
   top: 0;
-  z-index: 1000;
   transition: background 0.3s ease, opacity 0.3s ease;
-  opacity: 0.8; /* Légère transparence */
+  
+  height: auto;
 }
 
-.header:hover {
-  opacity: 1; /* Plus opaque au survol */
+
+
+
+/* Style de base pour le logo */
+.header .logo img {
+  transition: filter 0.3s ease; /* Transition pour un effet plus doux */
+  max-width: 22%; /* S'adapte à la largeur du conteneur */
+    height: auto;    /* Garde les proportions */
+    object-fit: contain; /* Ajuste l'image à la taille du conteneur */
 }
 
-.header .logo {
-  display: flex;
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #E2E8F0; /* Couleur de la marque légèrement atténuée */
+/* Effet de surbrillance gris sur le logo */
+.header .logo img:hover {
+  filter: brightness(0.7); /* Applique un filtre de luminosité pour rendre l'image plus sombre */
 }
 
 .header nav ul {
@@ -39,17 +44,15 @@
 .header nav ul li a {
   color: #CBD5E1; /* Couleur du texte douce et harmonieuse */
   text-decoration: none;
-  font-weight: bold;
   padding: 8px 12px;
   transition: color 0.3s ease, background 0.3s ease;
-  font-family: "Vibur", cursive;
   position: relative;
   border-radius: 5px;
 }
 
 .header nav ul li a:hover {
   color: #F1F5F9; /* Texte plus clair au survol */
-  background-color: rgba(99, 102, 241, 0.2); /* Arrière-plan au survol */
+  background-color: #1B0D1C; /* Arrière-plan au survol */
 }
 
 .header nav ul li a::after {
@@ -59,7 +62,7 @@
   bottom: -4px;
   height: 3px;
   width: 0;
-  background-color: #4F46E5; /* Ligne fine en violet */
+  background-color: black; /* Ligne fine en violet */
   transition: width 0.3s ease-in-out;
   border-radius: 5px;
 }

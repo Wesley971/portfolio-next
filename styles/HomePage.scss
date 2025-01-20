@@ -1,3 +1,32 @@
+/* Animation du fond */
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Animation pour déplacer la couverture */
+@keyframes move-cover-image {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100vh); /* Déplace la couverture vers le haut */
+  }
+}
+
+/* Applique l'animation lorsque la classe move-image est ajoutée */
+.cover.move-image {
+  animation: move-cover-image 1s forwards ease-in-out;
+}
+
+/* Contenu de la page */
 .fullscreen {
   position: fixed;
   top: 0;
@@ -66,18 +95,14 @@
       }
     }
   }
-}
 
-/* Animation du fond */
-@keyframes gradient-move {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
+  /* Contenu caché après l'animation */
+  .hidden-content {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    margin-top: 20px;
+    z-index: 1;
   }
 }
 
@@ -127,34 +152,5 @@
   }
   100% {
     transform: rotate(0deg);
-  }
-}
-
-/* Réactivité */
-@media (max-width: 768px) {
-  .fullscreen {
-    .welcome-container {
-      .welcome-text {
-        font-size: 2.5rem; /* Texte plus petit sur mobile */
-      }
-      .cta-button {
-        padding: 10px 20px;
-        font-size: 1rem;
-      }
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  .fullscreen {
-    .welcome-container {
-      .welcome-text {
-        font-size: 2rem; /* Texte plus petit sur très petits écrans */
-      }
-      .cta-button {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-      }
-    }
   }
 }

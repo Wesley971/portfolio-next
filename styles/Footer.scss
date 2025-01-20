@@ -1,29 +1,67 @@
 footer {
-    background: linear-gradient(135deg, #9c5ca0, #B551C7, #3B3297);
-    color: rgb(252, 221, 255);
+    background: linear-gradient(135deg, black, black, #1B0D1C);
+    color: #F1F5F9;
     font-family: "Sue Ellen Francisco", cursive;
     font-weight: 400;
-    font-style: normal;    
-    text-align: center;
+    font-style: normal;
     font-size: 1.5rem;
-    padding: 0 0 15px 0;
+    padding: 15px 20px 0 0; /* Ajout de padding */
     width: 100%;
     box-sizing: border-box;
-    transition: opacity 0.3s ease; /* Transition pour l'opacité */
-    opacity: 0.3; /* Opacité initiale pour rendre le footer transparent */
-    position: relative;
-    bottom: 0;
-}
+    transition: opacity 0.3s ease;
+    display: flex; /* Active le flexbox */
+    align-items: center; /* Centre verticalement les éléments */
+    justify-content: space-between; /* Espace entre les éléments */
+    height: auto;
 
-footer:hover {
-    opacity: 0.7; /* Opacité à 100% lorsque le footer est survolé */
-}
+    .logo {
+        img {
+            max-width: 22%; /* Taille du logo */
+            height: auto;
+            transition: filter 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
 
-footer a {
-    color: #3B3297;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+            &:hover {
+                filter: brightness(0.7);
+            }
+        }
+    }
+
+    .content {
+        flex: 1; /* Le texte occupe l'espace restant */
+        text-align: center; /* Texte centré */
+    }
+
+    .social-links {
+        display: flex; /* Flex pour les icônes */
+        gap: 15px; /* Espacement entre les icônes */
+        align-items: center; /* Alignement vertical des icônes */
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #F1F5F9;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+
+            svg {
+                width: 30px; /* Taille des icônes */
+                height: 30px;
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: scale(1.1); /* Agrandissement au survol */
+                }
+            }
+
+            &:hover {
+                background-color: #291527;
+                color: #F1F5F9;
+            }
+        }
+    }
 }
