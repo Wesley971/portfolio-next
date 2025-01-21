@@ -1,5 +1,5 @@
 .header {
-  background: linear-gradient(135deg, black, black, #1B0D1C); // Couleurs plus sobres
+  background: linear-gradient(135deg, black,#1f2039, black); // Couleurs plus sobres
   color: #F1F5F9; // Texte plus clair pour un meilleur contraste
   padding: 15px 0;
   display: flex;
@@ -46,9 +46,10 @@
           transition: color 0.3s ease, transform 0.3s ease;
 
           &:hover {
+            
             color: #F1F5F9; // Texte plus clair au survol
             transform: scale(1.1); // Agrandissement du texte au survol
-            background-color: #291527; // Fond violet foncé au survol
+            background-color: #1f2039; // Fond violet foncé au survol
           }
         }
       }
