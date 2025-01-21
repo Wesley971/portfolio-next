@@ -8,10 +8,18 @@ export default function HomePage() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [startAnimation, setStartAnimation] = useState(false); // Déclenche l'animation de couverture
   const [showHomeContent, setShowHomeContent] = useState(false); // Affiche le contenu principal
+  const [projects, setProjects] = useState([]); // Chargement des projets depuis JSON
 
   useEffect(() => {
+    // Texte aléatoire
     const index = Math.floor(Math.random() * welcomeTexts.length);
     setRandomText(welcomeTexts[index]);
+
+    // Chargement des projets
+    fetch('/projects.json')
+      .then((response) => response.json())
+      .then((data) => setProjects(data))
+      .catch((error) => console.error('Erreur lors du chargement des projets :', error));
   }, []);
 
   const handleMouseMove = (e) => {
@@ -54,19 +62,52 @@ export default function HomePage() {
 
       {/* Contenu principal (affiché après clic sur CTA) */}
       {showHomeContent && (
-        <div className="home-content">
+        <div className="main-content">
           <main>
-            <section id="projects">
-              <h2>Mes projets récents</h2>
-              <p>Voici quelques projets sur lesquels j'ai travaillé récemment.</p>
-            </section>
             <section id="about">
-              <h2>À propos de moi</h2>
-              <p>Je suis passionné de développement web et de design.</p>
+              <div>
+                <h1>Hey ! Moi, c’est <strong>Wesley Abdoul</strong></h1>
+                <p>
+                  Développeur web passionné🚀<br />
+                  Mon objectif ? Transformer vos idées en projets innovants, alliant <strong>design percutant</strong> et <strong>performance optimale</strong>.
+                </p>
+                <ul>
+                  <li><strong>Front-end :</strong> HTML, CSS, JavaScript, React, Next.js</li>
+                  <li><strong>Back-end :</strong> Node.js, Python</li>
+                  <li><strong>Techniques avancées :</strong> Optimisation des performances, SEO, responsive design</li>
+                </ul>
+                <p>
+                  💻 <a href="#projects">Explore mes projets</a>, et si tu as une idée ou un projet, <a href="#contact">contacte-moi</a> ! 🙌
+                </p>
+              </div>
+              <img src="Photo/wesley.png" alt="Wesley Abdoul" />
             </section>
+
+            <section id="illustrations">
+              <h2>Découvrez mes projets</h2>
+              <div className="projects-grid">
+                {projects.map((project) => (
+                  <div
+                    key={project.id}
+                    className="project-card"
+                    onClick={() => window.location.href = `/projects/${project.id}`}
+                  >
+                    <img
+                      src={project.projectPageImage}
+                      alt={project.title}
+                    />
+                    <div className="overlay">
+                      <p>{project.title}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
             <section id="contact">
               <h2>Contactez-moi</h2>
               <p>Envoyez-moi un message pour discuter d'une collaboration !</p>
+              {/* Ajoute ici un formulaire ou une section de contact */}
             </section>
           </main>
         </div>

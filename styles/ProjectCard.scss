@@ -1,102 +1,86 @@
-/* Styles de base */
 .project-card {
-    background: linear-gradient(
-      135deg,
-      rgba(13, 11, 44, 0.5),
-      rgba(181, 81, 199, 0.5),
-      rgba(59, 50, 151, 0.5)
-    );
-    border-radius: 15px; /* Coins arrondis */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour un effet de profondeur */
-    padding: 20px; /* Espacement intérieur */
-    margin: 20px; /* Espacement extérieur pour séparer les cartes */
-    transition: transform 0.3s ease; /* Effet de transition pour l'animation */
-    text-align: center; /* Centrer le texte */
-    max-width: 45vh; /* Largeur maximale pour garder les cartes uniformes */
-    width: 100%; /* Largeur par défaut */
-    flex-grow: 1; /* Permet à la carte de croître pour occuper l'espace disponible */
-    flex-basis: calc(33.333% - 40px); /* Largeur de base pour trois cartes par ligne, moins l'espacement */
-    box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur totale */
-    cursor: pointer; /* Curseur de la main pour indiquer que la carte est cliquable */
+  background: black; /* Fond sombre moderne */
+  border-radius: 12px; /* Coins arrondis */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Ombre douce */
+  margin: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
+  text-align: center;
+  max-width: 320px; /* Limite la largeur des cartes */
+  flex-grow: 1;
+  flex-basis: calc(33.333% - 30px); /* Trois cartes par ligne */
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-8px); /* Léger effet d'élévation */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Ombre renforcée */
   }
-  
-  .project-card img {
-    width: 100%; /* Image prend toute la largeur du conteneur */
-    height: auto; /* Hauteur automatique pour garder les proportions */
-    border-radius: 10px; /* Coins légèrement arrondis pour les images */
+
+  img {
+    display: block; /* Supprime les marges automatiques des images */
+    width: 100%; /* L'image occupe toute la largeur de la carte */
+    height: 200px; /* Fixe une hauteur uniforme */
+    object-fit: cover; /* L'image remplit l'espace sans déformation */
+    border-radius: 10px;
+    margin-bottom: 15px; /* Espacement en dessous de l'image */
+    transition: transform 0.3s ease;
   }
-  
-  .project-card h3 {
-    font-family: "The Girl Next Door", cursive;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 2rem; /* Taille de police pour le titre */
-    margin: 10px 0; /* Espacement au-dessus et en dessous du titre */
-    color: white; /* Couleur de texte blanche pour un contraste élevé */
+
+  &:hover img {
+    transform: scale(1.05); /* Zoom léger sur l'image */
   }
-  
-  .project-card p {
-    font-family: "Courgette", cursive;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1.2rem; /* Taille de police pour la description */
-    color: white; /* Couleur de texte grise pour un contraste doux */
-    margin-bottom: 15px; /* Espacement au-dessous de la description */
+
+  h3 {
+    font-family: 'Manrope', sans-serif; /* Style moderne pour le titre */
+    font-weight: 600;
+    font-size: 1.6rem;
+    margin: 10px 0;
+    color: #ffffff;
   }
-  
-  .project-card a {
-    display: inline-block; /* Affichage en ligne pour le lien */
-    padding: 10px 20px; /* Espacement intérieur pour le lien */
-    background-color: #6533bd; /* Couleur de fond du lien */
-    color: #fff; /* Couleur de texte du lien */
-    border-radius: 5px; /* Coins arrondis pour le lien */
-    text-decoration: none; /* Pas de soulignement */
-    transition: background-color 0.3s ease; /* Effet de transition pour le changement de couleur */
+
+  p {
+    font-family: 'Roboto', sans-serif; /* Police lisible pour le texte */
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.6;
+    margin-bottom: 15px;
   }
-  
-  .project-card a:hover {
-    background-color: #cd7dd1; /* Changement de couleur au survol */
-  }
-  
-  .project-card:hover {
-    transform: translateY(-5px); /* Légère élévation au survol */
-  }
-  
-  /* Pour les petits appareils (téléphones) */
-  @media (max-width: 600px) {
-    .project-card {
-      flex-basis: calc(100% - 40px); /* Une seule carte par ligne */
-      margin: 10px; /* Réduire l'espacement extérieur */
-    }
-  
-    .project-card h3 {
-      font-size: 1.5rem; /* Réduire la taille de la police pour les petits écrans */
-    }
-  
-    .project-card p {
-      font-size: 1rem; /* Réduire la taille de la police pour les petits écrans */
+
+  a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6c63ff;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #9a81ff;
     }
   }
-  
-  /* Pour les appareils moyens (tablettes) */
-  @media (max-width: 900px) {
-    .project-card {
-      flex-basis: calc(50% - 40px); /* Deux cartes par ligne */
-    }
-  
-    .project-card h3 {
-      font-size: 1.75rem; /* Ajuster la taille de la police */
-    }
-  
-    .project-card p {
-      font-size: 1.1rem; /* Ajuster la taille de la police */
-    }
+}
+
+/* Adaptation responsive */
+@media (max-width: 600px) {
+  .project-card {
+    flex-basis: calc(100% - 30px); /* Une carte par ligne sur mobile */
   }
-  
-  /* Pour les grands écrans (ordinateurs) */
-  @media (min-width: 1200px) {
-    .project-card {
-      flex-basis: calc(25% - 40px); /* Quatre cartes par ligne */
-    }
+
+  h3 {
+    font-size: 1.4rem;
   }
-  
+
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .project-card {
+    flex-basis: calc(50% - 30px); /* Deux cartes par ligne sur tablette */
+  }
+}

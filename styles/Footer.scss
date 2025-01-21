@@ -1,10 +1,10 @@
 footer {
     background: linear-gradient(135deg, black, black, #1B0D1C);
     color: #F1F5F9;
-    font-family: "Sue Ellen Francisco", cursive;
+    font-family: 'Manrope', sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 1.5rem;
+    font-size: 1rem;
     padding: 15px 20px 0 0; /* Ajout de padding */
     width: 100%;
     box-sizing: border-box;
@@ -23,6 +23,7 @@ footer {
 
             &:hover {
                 filter: brightness(0.7);
+                transform: scale(1.1); // Effet d'agrandissement
             }
         }
     }
@@ -49,7 +50,7 @@ footer {
             transition: background-color 0.3s ease;
 
             svg {
-                width: 30px; /* Taille des icônes */
+                width: 50px; /* Taille des icônes */
                 height: 30px;
                 transition: transform 0.3s ease;
 

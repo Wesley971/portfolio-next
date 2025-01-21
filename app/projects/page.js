@@ -37,7 +37,7 @@ export default function ProjectsPage() {
         <div
           key={project.id}
           className={`carousel-slide ${index === currentIndex ? 'active' : ''}`}
-          style={{ backgroundImage: `url(${project.image})` }} // Utiliser une image si disponible
+          style={{ backgroundImage: `url(${project.imageUrl})` }} // Utiliser une image si disponible
         >
           <div className="content">
             <h2>{project.title}</h2>

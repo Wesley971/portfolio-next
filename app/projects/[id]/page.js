@@ -1,4 +1,4 @@
-import '../../styles/ProjectDetails.scss';
+
 
 async function fetchProjectData(id) {
   const response = await fetch('/projects.json');

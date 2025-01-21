@@ -3,7 +3,8 @@
         "id": 1,
         "title": "Booki",
         "description": "Créez la page d'accueil d'une agence de voyage avec HTML & CSS",
-        "imageUrl": "public/Portfolio/images/booki_mockup.png",
+        "imageUrl": "/Portfolio/images/booki_mockup.png",
+        "projectPageImage": "/Portfolio/images/booki_project_page.png",
         "link": "https://github.com/Wesley971/Booki",
         "skills": "HTML, CSS, Design responsive",
         "skillsDescription": "Dans ce projet, j'ai appris à structurer une page HTML de manière sémantique et à utiliser CSS pour créer une mise en page responsive adaptée à différents types d'appareils."
@@ -12,7 +13,8 @@
         "id": 2,
         "title": "OhMyfood",
         "description": "Améliorez l'interface d'un site mobile avec des animations CSS",
-        "imageUrl": "/Portfolio/images/image1.png",
+        "imageUrl": "/Portfolio/images/ohmyfood_mockup.png",
+        "projectPageImage": "/Portfolio/images/ohmyfood_project_page.png",
         "link": "https://github.com/Wesley971/OhMyfood",
         "skills": "CSS, Animations, Design mobile",
         "skillsDescription": "Ce projet m'a permis de maîtriser les animations CSS pour améliorer l'expérience utilisateur sur les appareils mobiles, en rendant l'interface plus dynamique et attrayante."
@@ -21,7 +23,8 @@
         "id": 3,
         "title": "Sophie Bluel",
         "description": "Créez une page web dynamique avec JavaScript",
-        "imageUrl": "/Portfolio/images/image1.png",
+        "imageUrl": "/Portfolio/images/sophie_bluel_mockup.png",
+        "projectPageImage": "/Portfolio/images/sophie_bluel_project_page.png",
         "link": "https://github.com/Wesley971/Sophie-Bluel",
         "skills": "JavaScript, Manipulation du DOM, Gestion des événements",
         "skillsDescription": "J'ai développé mes compétences en JavaScript en créant des interactions dynamiques avec les utilisateurs et en manipulant le DOM pour mettre à jour le contenu de la page en temps réel."
@@ -30,7 +33,8 @@
         "id": 4,
         "title": "Kasa",
         "description": "Créez une application web de location immobilière avec React",
-        "imageUrl": "/Portfolio/images/image1.png",
+        "imageUrl": "/Portfolio/images/kasa_mockup.png",
+        "projectPageImage": "/Portfolio/images/kasa_project_page.png",
         "link": "https://github.com/Wesley971/Kasa",
         "skills": "React, Architecture basée sur les composants, Gestion de l'état",
         "skillsDescription": "Ce projet m'a appris à construire une application web en utilisant React, à organiser le code en composants réutilisables et à gérer l'état de l'application de manière efficace."
@@ -39,7 +43,8 @@
         "id": 5,
         "title": "Nina Cardocci",
         "description": "Optimisez le référencement d'un site de photographe",
-        "imageUrl": "/Portfolio/images/image1.png",
+        "imageUrl": "/Portfolio/images/nina_mockup.png",
+        "projectPageImage": "/Portfolio/images/nina_project_page.png",
         "link": "https://github.com/Wesley971/P-9-Nina",
         "skills": "SEO, Optimisation des performances, Stratégie de contenu",
         "skillsDescription": "J'ai acquis des connaissances en SEO en optimisant le contenu et les performances du site, ce qui a conduit à une meilleure visibilité dans les moteurs de recherche."
@@ -48,7 +53,8 @@
         "id": 6,
         "title": "724events",
         "description": "Débuggez le site d'une agence d'événementiel",
-        "imageUrl": "/Portfolio/images/image1.png",
+        "imageUrl": "/Portfolio/images/724events_mockup.png",
+        "projectPageImage": "/Portfolio/images/724events_project_page.png",
         "link": "https://github.com/Wesley971/P-10-724events",
         "skills": "Débogage, Tests, Refactorisation de code",
         "skillsDescription": "En travaillant sur ce projet, j'ai amélioré mes compétences en débogage et en test de code, ce qui m'a permis de résoudre efficacement des problèmes et d'améliorer la qualité du code."
@@ -57,7 +63,8 @@
         "id": 7,
         "title": "Bank Argent",
         "description": "Implémentez le front-end d'une application bancaire avec React",
-        "imageUrl": "/Portfolio/images/image1.png",
+        "imageUrl": "/Portfolio/images/bank_argent_mockup.png",
+        "projectPageImage": "/Portfolio/images/bank_argent_project_page.png",
         "link": "https://github.com/Wesley971/P-11-Bank-Argent",
         "skills": "React, Intégration API, Authentification des utilisateurs",
         "skillsDescription": "Ce projet m'a permis de travailler avec des APIs et d'implémenter des fonctionnalités d'authentification des utilisateurs, tout en développant une application front-end complexe avec React."
