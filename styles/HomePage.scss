@@ -98,15 +98,11 @@
 
   /* Contenu caché après l'animation */
   .hidden-content {
-    opacity: 0;
-    transform: translateY(20px); /* Ajoute un décalage pour une transition fluide */
-    transition: opacity 1s ease, transform 1s ease;
-    z-index: 2; /* Toujours au-dessus de .cover */
-  
-    .cover.move-image + & {
-      opacity: 1;
-      transform: translateY(0); /* Retourne à sa position normale */
-    }
+    display: block;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+    margin-top: 20px;
+    z-index: 1;
   }
 }
 .main-content {
