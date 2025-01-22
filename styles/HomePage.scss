@@ -34,7 +34,7 @@
   width: 100vw;
   height: 100vh;
   z-index: 9999; /* Toujours au-dessus */
-  background: linear-gradient(120deg, #C49FFF, #DC98BD, #7D4FFE);
+  background: linear-gradient(120deg, #8e86b5, #acaeed,#6c63ff);  //#C49FFF, #DC98BD, #7D4FF//
   background-size: 200% 200%;
   display: flex;
   align-items: center;
@@ -98,11 +98,15 @@
 
   /* Contenu caché après l'animation */
   .hidden-content {
-    display: block;
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-    margin-top: 20px;
-    z-index: 1;
+    opacity: 0;
+    transform: translateY(20px); /* Ajoute un décalage pour une transition fluide */
+    transition: opacity 1s ease, transform 1s ease;
+    z-index: 2; /* Toujours au-dessus de .cover */
+  
+    .cover.move-image + & {
+      opacity: 1;
+      transform: translateY(0); /* Retourne à sa position normale */
+    }
   }
 }
 .main-content {
@@ -122,6 +126,7 @@
   gap: 20px;
   justify-content: center;
   align-items: center;
+  height: 800px;
 }
 #about h1 {
   font-family: 'Montserrat', sans-serif;
@@ -234,12 +239,106 @@
 }
 
 #contact {
-  
   color: #fff;
-  padding: 20px;
-  border-radius: 8px;
+  padding: 40px 20px;
   text-align: center;
+
+  h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #a5b4fc;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #d1d5db;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 12px;
+
+    .form-group {
+      display: flex;
+      gap: 150px;
+      padding: 15px;
+      flex-wrap: wrap;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      margin-bottom: 20px;
+
+      label {
+        margin-bottom: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #ffffff;
+      }
+
+      input, 
+      textarea {
+        padding: 12px;
+        border: 1px solid #333;
+        border-radius: 8px;
+        font-size: 1rem;
+        background: #121212;
+        color: #ffffff;
+        outline: none;
+        transition: border-color 0.3s ease;
+        width: 100%;
+
+        &:focus {
+          border-color: #6c63ff;
+        }
+      }
+
+      textarea {
+        resize: none;
+        border: none;
+      }
+    }
+
+    button[type="submit"] {
+      padding: 20px 30px;
+      width: 22%;
+      margin: 0 auto;
+      background: linear-gradient(#8e86b5, #acaeed);
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background: linear-gradient(#696484, #8788ba);
+      }
+    }
+  }
+
+  #nom, #email {
+    flex-grow: 2;
+    background: #121212;
+  }
 }
+
+// Responsive Design
+@media (max-width: 768px) {
+  #contact form .form-nom-email {
+    flex-direction: column;
+  }
+}
+
 
 a {
   color: #a5b4fc;
