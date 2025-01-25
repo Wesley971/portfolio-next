@@ -58,7 +58,7 @@ export default function HomePage() {
       <div className={`main-content ${startAnimation ? 'show' : 'hidden'}`}>
         <main>
           <section id="about">
-            <div>
+            <div className="about-text">
               <h1>Hey ! Moi, c’est <strong>Wesley Abdoul</strong></h1>
               <p>
                 Développeur web passionné🚀<br />

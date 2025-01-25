@@ -123,37 +123,52 @@
   justify-content: center;
   align-items: center;
   height: 800px;
-}
-#about h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 2rem ;
-  color: #a5b4fc;
-  width: 40%;
-  font-weight: bolder;
-}
-#about p {
-  width: 100%; /* Full width pour mobiles */
-  max-width: 500px; /* Limite la largeur sur grands écrans */
-  text-align: center;
+  color: #f9f8ff;
+
+  &-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 600px;
+  }
+
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    color: #a5b4fc;
+    width: 100%;
+    font-weight: bolder;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+
+  p {
+    width: 100%; /* Full width pour mobiles */
+    max-width: 500px; /* Limite la largeur sur grands écrans */
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 1.1em
+  }
+
+  ul {
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+    width: 90%;
+
+    li {
+      margin: 10px 0;
+      font-size: 1rem;
+    }
+  }
+
+  img {
+    width: 300px;
+    border-radius: 20%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
 }
 
-#about ul {
-  margin-top: 20px;
-  list-style: none;
-  padding: 0;
-  width: 50%;
-}
-
-#about ul li {
-  margin: 10px 0;
-  font-size: 1rem;
-}
-
-#about img {
-  width: 300px;
-  border-radius: 20%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 #illustrations {
   display: flex;
   flex-direction: column;
@@ -391,5 +406,198 @@ a:hover {
   }
   100% {
     transform: rotate(0deg);
+  }
+}
+// Responsive Design Centralisé
+
+// Petits appareils (max-width: 768px)
+@media (max-width: 768px) {
+  .fullscreen {
+    padding: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 96vh;
+    .welcome-container {
+      h1 {
+        font-size: 1.8rem;
+        text-align: center;
+        line-height: 1.5;
+      }
+
+      .cta-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+        margin-top: 15px;
+      }
+    }
+  }
+
+  #about {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    height: auto;
+
+    &-text {
+      max-width: 90%;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    ul {
+      width: 100%;
+      text-align: center;
+    }
+
+    img {
+      width: 200px;
+      margin: 20px auto;
+    }
+  }
+
+  #illustrations {
+    padding: 20px 10px;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    .projects-grid {
+      grid-template-columns: 1fr; /* Une seule colonne */
+      gap: 20px;
+    }
+  }
+
+  #contact {
+    padding: 20px;
+
+    h2 {
+      font-size: 1.8rem;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    form {
+      .form-group {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      button[type="submit"] {
+        width: 100%;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+// Appareils moyens (max-width: 1024px)
+@media (max-width: 1024px) {
+  .fullscreen {
+    .welcome-container {
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .cta-button {
+        font-size: 1.1rem;
+        padding: 12px 24px;
+      }
+    }
+  }
+
+  #about {
+    gap: 15px;
+
+    &-text {
+      max-width: 80%;
+      text-align: center;
+    }
+
+    img {
+      width: 250px;
+    }
+  }
+
+  #illustrations {
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+      gap: 20px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+    }
+  }
+
+  #contact {
+    form {
+      .form-group {
+        gap: 30px;
+      }
+    }
+  }
+}
+
+// Appareils larges (au-dessus de 1024px)
+@media (min-width: 1025px) {
+  .fullscreen {
+    .welcome-container {
+      h1 {
+        font-size: 3rem;
+      }
+
+      .cta-button {
+        font-size: 1.2rem;
+        padding: 15px 30px;
+      }
+    }
+  }
+
+  #about {
+    flex-direction: row;
+    gap: 40px;
+
+    &-text {
+      max-width: 50%;
+    }
+
+    img {
+      width: 300px;
+    }
+  }
+
+  #illustrations {
+    .projects-grid {
+      grid-template-columns: repeat(3, 1fr); /* Trois colonnes */
+    }
+  }
+
+  #contact {
+    form {
+      max-width: 800px;
+
+      .form-group {
+        flex-direction: row;
+        gap: 50px;
+      }
+
+      button[type="submit"] {
+        width: auto;
+        font-size: 1.2rem;
+      }
+    }
   }
 }

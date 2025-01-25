@@ -77,3 +77,76 @@
     }
   }
 }
+// Responsive Design pour le Header
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 10px 0; /* Réduction de l'espacement */
+    flex-direction: column; /* Empile les éléments */
+    align-items: center; /* Centre tous les éléments */
+
+    .logo {
+      display: flex; /* Assure l'alignement du logo */
+      justify-content: center; /* Centre le logo horizontalement */
+      margin-bottom: 15px; /* Espacement entre le logo et les autres éléments */
+
+      img {
+        max-width: 30%; /* Ajuste la taille pour qu'elle reste visible */
+      }
+    }
+
+    nav {
+      ul {
+        flex-direction: column; /* Navigation en colonne */
+        gap: 10px; /* Réduit l'espacement entre les éléments */
+
+        li {
+          a {
+            font-size: 1rem; /* Réduction de la taille du texte */
+          }
+        }
+      }
+    }
+
+    .social-links {
+      gap: 10px; /* Réduction de l'espacement */
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 8px 0; /* Réduction supplémentaire de l'espacement */
+    flex-direction: column; /* Empile les éléments */
+    align-items: center; /* Centre tous les éléments */
+
+    .logo {
+      margin-bottom: 10px; /* Réduit l'espacement */
+      
+      img {
+        max-width: 40%; /* Taille adaptée pour les petits écrans */
+      }
+    }
+
+    nav {
+      ul {
+        flex-direction: column; /* Navigation en colonne */
+        gap: 8px; /* Espacement réduit */
+
+        li {
+          a {
+            font-size: 0.9rem; /* Texte légèrement plus petit */
+            padding: 6px 8px; /* Réduction de l'espacement interne */
+          }
+        }
+      }
+    }
+
+    .social-links {
+      gap: 8px; /* Réduction de l'espacement entre les liens */
+      a {
+        font-size: 0.9rem; /* Réduction de la taille de texte des liens sociaux */
+      }
+    }
+  }
+}

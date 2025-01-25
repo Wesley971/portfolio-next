@@ -1,10 +1,12 @@
 'use client';
-import { useState, useEffect } from 'react';
-
+import { useState, useEffect, useRef } from 'react';
+import Splide from '@splidejs/splide';
+import '@splidejs/splide/dist/css/splide.min.css';
 
 export default function ProjectsPage() {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [projects, setProjects] = useState([]);
+  const mainSliderRef = useRef(null); // Référence pour le slider principal
+  const thumbnailSliderRef = useRef(null); // Référence pour le slider des miniatures
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -21,41 +23,87 @@ export default function ProjectsPage() {
   }, []);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
-    }, 10000); // Change toutes les 10 secondes
-    return () => clearInterval(interval);
-  }, [projects.length]);
+    if (projects.length === 0) return;
 
-  const handleNavigation = (index) => {
-    setCurrentIndex(index);
-  };
+    const main = new Splide(mainSliderRef.current, {
+      type: 'fade',
+      heightRatio: 0.5,
+      pagination: false,
+      arrows: false,
+      cover: true,
+      autoplay: true,
+      interval: 5000, // Change toutes les 5 secondes
+      rewind: true, // Assure une boucle infinie
+    });
+
+    const thumbnails = new Splide(thumbnailSliderRef.current, {
+      rewind: true, // Assure une boucle infinie pour les miniatures
+      fixedWidth: 104,
+      fixedHeight: 58,
+      isNavigation: true,
+      gap: 10,
+      focus: 'center',
+      pagination: false,
+      cover: true,
+      breakpoints: {
+        640: {
+          fixedWidth: 66,
+          fixedHeight: 38,
+        },
+      },
+    });
+
+    main.sync(thumbnails);
+    main.mount();
+    thumbnails.mount();
+
+    return () => {
+      main.destroy();
+      thumbnails.destroy();
+    };
+  }, [projects]);
 
   return (
     <div className="fullscreen-carousel">
-      {projects.map((project, index) => (
-        <div
-          key={project.id}
-          className={`carousel-slide ${index === currentIndex ? 'active' : ''}`}
-          style={{ backgroundImage: `url(${project.imageUrl})` }} // Utiliser une image si disponible
-        >
-          <div className="content">
-            <h2>{project.title}</h2>
-            <p>{project.description}</p>
-            <a href={project.link} target="_blank" rel="noopener noreferrer">
-              Voir le projet
-            </a>
-          </div>
+      {/* Slider principal */}
+      <div id="main-slider" className="splide" ref={mainSliderRef}>
+        <div className="splide__track">
+          <ul className="splide__list">
+            {projects.map((project) => (
+              <li key={project.id} className="splide__slide">
+                <div
+                  className="carousel-slide"
+                  style={{
+                    backgroundImage: `url(${project.imageUrl})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                  }}
+                >
+                  <div className="content">
+                    <h2>{project.title}</h2>
+                    <p>{project.description}</p>
+                    <a href={project.link} target="_blank" rel="noopener noreferrer">
+                      Voir le projet
+                    </a>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
-      ))}
-      <div className="carousel-controls">
-        {projects.map((_, index) => (
-          <button
-            key={index}
-            className={`dot ${index === currentIndex ? 'active' : ''}`}
-            onClick={() => handleNavigation(index)}
-          />
-        ))}
+      </div>
+
+      {/* Slider des miniatures */}
+      <div id="thumbnail-slider" className="splide" ref={thumbnailSliderRef}>
+        <div className="splide__track">
+          <ul className="splide__list">
+            {projects.map((project) => (
+              <li key={project.id} className="splide__slide">
+                <img src={project.imageUrl} alt={project.title} />
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
