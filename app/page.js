@@ -7,6 +7,7 @@ export default function HomePage() {
   const [randomText, setRandomText] = useState('');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [startAnimation, setStartAnimation] = useState(null); // null pour éviter le flash initial
+  const [showContent, setShowContent] = useState(false); // Gère l'affichage progressif du contenu principal
   const [projects, setProjects] = useState([]);
   const [error, setError] = useState(null);
   const [selectedProject, setSelectedProject] = useState(null);
@@ -14,14 +15,19 @@ export default function HomePage() {
   useEffect(() => {
     setRandomText(welcomeTexts[Math.floor(Math.random() * welcomeTexts.length)]);
 
-    // Lire sessionStorage pour savoir si l'utilisateur a déjà vu l'intro
+    // Vérifier si l'intro a déjà été vue
     const hasSeenIntro = sessionStorage.getItem('hasSeenIntro') === 'true';
-    setStartAnimation(hasSeenIntro); // Met directement à true ou false
+    setStartAnimation(hasSeenIntro);
+
+    if (hasSeenIntro) {
+      setShowContent(true); // Afficher immédiatement le contenu principal si l'animation est déjà passée
+    }
   }, []);
 
   const handleStartAnimation = () => {
     setStartAnimation(true);
-    sessionStorage.setItem('hasSeenIntro', 'true'); // Marquer l'intro comme vue
+    sessionStorage.setItem('hasSeenIntro', 'true'); // Marquer comme vu
+    setTimeout(() => setShowContent(true), 800); // Lancer le contenu avec un léger délai pour la transition
   };
 
   useEffect(() => {
@@ -53,23 +59,23 @@ export default function HomePage() {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, [handleMouseMove]);
 
-  // ✅ Ne rien afficher tant que sessionStorage n'a pas été vérifié
+  // Ne rien afficher tant que sessionStorage n'a pas été vérifié
   if (startAnimation === null) {
     return null;
   }
 
   return (
     <div className="homepage">
-      {/* Section de couverture avec animation */}
+      {/* Section d'intro avec effet de zoom et fade-in */}
       {!startAnimation && (
         <div
-          className="cover fullscreen"
+          className="cover fullscreen fade-in"
           style={{
             transform: `translate(${mousePosition.x * 10}px, ${mousePosition.y * 10}px)`,
             transition: 'transform 0.1s ease-out',
           }}
         >
-          <main className="welcome-container">
+          <main className="welcome-container zoom-in">
             <h1 className="welcome-text">
               <span className="typing-effect">{randomText}</span>
               <span className="wave">👋</span>
@@ -81,54 +87,53 @@ export default function HomePage() {
         </div>
       )}
 
-      {/* Affichage du contenu principal */}
-      {startAnimation && (
-        <div className="main-content show">
-          <main>
-            <section id="about">
-              <div className="about-text">
-                <h1>Hey ! Moi, c’est <strong>Wesley Abdoul</strong></h1>
-                <p>
-                  Développeur web passionné🚀<br />
-                  Mon objectif ? Transformer vos idées en projets innovants, alliant <strong>design percutant</strong> et <strong>performance optimale</strong>.
-                </p>
-                <ul>
-                  <li><strong>Front-end :</strong> HTML, CSS, JavaScript, React, Next.js</li>
-                  <li><strong>Back-end :</strong> Node.js, Python</li>
-                  <li><strong>Techniques avancées :</strong> Optimisation des performances, SEO, responsive design</li>
-                </ul>
-                <p>
-                  💻 <a href="#projects">Explore mes projets</a>, et si tu as une idée ou un projet, <a href="#contact">contacte-moi</a> ! 🙌
-                </p>
-              </div>
-              <img src="Photo/wesley.png" alt="Wesley Abdoul" />
-            </section>
+      {/* Contenu principal avec animation d'apparition */}
+      <div className={`main-content ${showContent ? 'fade-in' : 'hidden'}`}>
+        <main>
+          <section id="about">
+            <div className="about-text">
+              <h1>Hey ! Moi, c’est <strong>Wesley Abdoul</strong></h1>
+              <p>
+                Développeur web passionné🚀<br />
+                Mon objectif ? Transformer vos idées en projets innovants, alliant <strong>design percutant</strong> et <strong>performance optimale</strong>.
+              </p>
+              <ul>
+                <li><strong>Front-end :</strong> HTML, CSS, JavaScript, React, Next.js</li>
+                <li><strong>Back-end :</strong> Node.js, Python</li>
+                <li><strong>Techniques avancées :</strong> Optimisation des performances, SEO, responsive design</li>
+              </ul>
+              <p>
+                💻 <a href="#projects">Explore mes projets</a>, et si tu as une idée ou un projet, <a href="#contact">contacte-moi</a> ! 🙌
+              </p>
+            </div>
+            <img src="Photo/wesley.png" alt="Wesley Abdoul" />
+          </section>
 
-            <section id="illustrations">
-              <h2>Découvrez mes projets</h2>
-              {error ? (
-                <p className="error-message">{error}</p>
-              ) : (
-                <div className="projects-grid">
-                  {projects.length > 0 ? (
-                    projects.map((project) => (
-                      <div
-                        key={project.id}
-                        className="project-card"
-                        onClick={() => setSelectedProject(project)}
-                      >
-                        <img src={project.projectPageImage} alt={project.title} />
-                        <div className="overlay">
-                          <p>{project.title}</p>
-                        </div>
+          <section id="illustrations">
+            <h2>Découvrez mes projets</h2>
+            {error ? (
+              <p className="error-message">{error}</p>
+            ) : (
+              <div className="projects-grid">
+                {projects.length > 0 ? (
+                  projects.map((project) => (
+                    <div
+                      key={project.id}
+                      className="project-card"
+                      onClick={() => setSelectedProject(project)}
+                    >
+                      <img src={project.projectPageImage} alt={project.title} />
+                      <div className="overlay">
+                        <p>{project.title}</p>
                       </div>
-                    ))
-                  ) : (
-                    <p>Chargement des projets...</p>
-                  )}
-                </div>
-              )}
-            </section>
+                    </div>
+                  ))
+                ) : (
+                  <p>Chargement des projets...</p>
+                )}
+              </div>
+            )}
+          </section>
 
             <section id="contact">
               <h2>Contactez-moi</h2>
@@ -153,7 +158,6 @@ export default function HomePage() {
             </section>
           </main>
         </div>
-      )}
     </div>
   );
 }
