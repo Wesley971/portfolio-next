@@ -6,11 +6,11 @@
 // Utilisation des styles spécifiques aux pages avec namespaces
 @use './ProjectsPage.scss' as projectsPage;
 @use './ProjectDetails.scss' as projectDetails;
-@use './ContactPage.scss' as contactPage;
+
 
 html, body {
     margin: 0;
     padding: 0;
     width: 100%;
-    background: #1f2039;
+    background: black;
 }

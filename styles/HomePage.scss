@@ -34,7 +34,7 @@
   width: 100vw;
   height: 100vh;
   z-index: 9999; /* Toujours au-dessus */
-  background: linear-gradient(120deg, #8e86b5, #acaeed,#6c63ff);  //#C49FFF, #DC98BD, #7D4FF//
+  background: linear-gradient(120deg, #121212, #4e2f14, #b5833d, #f1c27d); /* Dégradé de couleurs */
   background-size: 200% 200%;
   display: flex;
   align-items: center;
@@ -81,7 +81,7 @@
       font-size: 1.2rem;
       font-weight: bold;
       color: #fff;
-      background: linear-gradient(120deg, #FF85C2, #FF69B4);
+      background: linear-gradient(120deg, #926d27, #c49a5a);
       border: none;
       border-radius: 5px;
       cursor: pointer;
@@ -90,7 +90,7 @@
 
       &:hover {
         transform: scale(1.05);
-        background: linear-gradient(120deg, #FF69B4, #FF85C2);
+        background: linear-gradient(120deg, #c49a5a, #926d27);
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Ombre accentuée */
       }
     }
@@ -135,7 +135,7 @@
   h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
-    color: #a5b4fc;
+    color: #926d27;
     width: 100%;
     font-weight: bolder;
     text-align: left;
@@ -257,7 +257,7 @@
   h2 {
     font-size: 2.2rem;
     margin-bottom: 20px;
-    color: #a5b4fc;
+    color: #926d27;
   }
 
   p {
@@ -321,7 +321,7 @@
       padding: 20px 30px;
       width: 22%;
       margin: 0 auto;
-      background: linear-gradient(#8e86b5, #acaeed);
+      background: linear-gradient(#926d27, #c49a5a);
       color: #ffffff;
       font-size: 1rem;
       font-weight: bold;
@@ -332,7 +332,7 @@
       transition: background-color 0.3s ease;
 
       &:hover {
-        background: linear-gradient(#696484, #8788ba);
+        background: linear-gradient(#73501e, #a37a3a);
       }
     }
   }
@@ -352,7 +352,7 @@
 
 
 a {
-  color: #a5b4fc;
+  color: #926d27;
   text-decoration: none;
 }
 
@@ -600,4 +600,142 @@ a:hover {
       }
     }
   }
+}
+/* ============================= */
+/* Modale - Version ultra premium et cohérente */
+/* ============================= */
+
+/* Fond semi-transparent avec effet de flou */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(18, 18, 18, 0.85); /* Sombre et immersif */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+  overflow: hidden; /* Empêche tout débordement */
+}
+
+/* Effet d’apparition */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Contenu de la modale */
+.modal-content {
+  background: #121212; /* Fond totalement cohérent avec ton site */
+  color: #e4e4e4; /* Texte plus lumineux pour un bon contraste */
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 900px;
+  width: 90%;
+  max-height: 90vh;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+  position: relative;
+  text-align: center;
+  transform: translateY(-20px);
+  animation: slideIn 0.4s ease-out forwards;
+  overflow: hidden; /* Supprime le scroll inutile */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+/* Animation d’entrée */
+@keyframes slideIn {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Bouton de fermeture */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  border: none;
+  background: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #e4e4e4;
+  transition: transform 0.2s ease-in-out, color 0.2s;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
+  color: #ff85c2; /* Effet rose subtil */
+}
+
+/* Style du titre */
+.modal-content h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: #a5b4fc; /* Bleu doux pour rester dans ton esthétique */
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 12px rgba(165, 180, 252, 0.5);
+}
+
+/* Style du texte */
+.modal-content p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  font-family: 'Manrope', sans-serif;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #d1d5db;
+  max-width: 700px;
+}
+
+/* Image du projet - Maximisée et immersive */
+.modal-content img {
+  width: 100%;
+  max-height: 75vh;
+  object-fit: contain; /* Affiche l’image sans déformation */
+  border-radius: 15px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+  margin-bottom: 20px;
+  border: 2px solid rgba(165, 180, 252, 0.3);
+}
+
+/* Ajout d’un bouton d’action sous la modale */
+.modal-action {
+  margin-top: 20px;
+}
+
+.modal-action button {
+  background: linear-gradient(120deg, #6c63ff, #8e86b5);
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-action button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(120deg, #8e86b5, #6c63ff);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }

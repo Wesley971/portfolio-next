@@ -1,5 +1,5 @@
 footer {
-    background: linear-gradient(135deg, black,#1f2039,black);
+    background: linear-gradient(135deg, black,#121212,black);
     color: #F1F5F9;
     font-family: 'Manrope', sans-serif;
     font-weight: 400;
@@ -29,8 +29,8 @@ footer {
     }
 
     .content {
-        flex: 1; /* Le texte occupe l'espace restant */
-        text-align: center; /* Texte centré */
+        flex-grow: 1;
+        text-align: center;
     }
 
     .social-links {

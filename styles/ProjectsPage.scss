@@ -1,5 +1,5 @@
 .fullscreen-carousel {
-  padding: 15px 0;
+  padding: 0;
 }
 
 .splide__slide {
@@ -11,8 +11,8 @@
 }
 
 .carousel-slide {
-  width: 80%; // Conserve la largeur définie
-  height: 90%; // Conserve la hauteur définie
+  width: 66%; // Conserve la largeur définie
+  height: 70%; // Conserve la hauteur définie
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -26,7 +26,7 @@
     bottom: 36px; // Garde la position verticale d'origine
     left: 50%; // Centre horizontalement par rapport au parent
     transform: translateX(-50%); // Recentre parfaitement horizontalement
-    background: rgba(48, 25, 52, 0.9); // Violet sombre avec 90% de transparence
+    background: rgba(56, 38, 22, 0.9); // Fond semi-transparent
 
     color: #ffffff;
     padding: 40px;
@@ -56,13 +56,13 @@
       text-transform: uppercase;
       text-decoration: none;
       color: #ffffff;
-      background-color: #8e86b5;
+      background-color: #926d27;
       border-radius: 6px;
       transition: background-color 0.3s;
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); // Ombre pour améliorer la lisibilité du lien
 
       &:hover {
-        background-color: #6c63ff;
+        background-color: #a37a3a;
       }
     }
   }
