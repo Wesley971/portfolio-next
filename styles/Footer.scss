@@ -1,68 +1,53 @@
-footer {
-    background: linear-gradient(135deg, black,#121212,black);
-    color: #F1F5F9;
-    font-family: 'Manrope', sans-serif;
-    font-weight: 400;
-    font-style: normal;
+.footer {
+    display: flex;
+    justify-content: center; /* Centre horizontalement tout le contenu */
+    align-items: center; /* Centre verticalement */
+    text-align: center; /* Centre le texte à l'intérieur */
+    width: 100%; /* Occupe toute la largeur */
+    max-width: 1200px; /* Empêche un débordement sur les très grands écrans */
+    margin: 0 auto; /* Centre le footer sur la page */
+    padding: 20px;
+    background: black; /* Fond harmonisé avec ton thème */
+    color: #e3b878; /* Texte légèrement doré */
     font-size: 1rem;
-    padding: 15px 20px 0 0; /* Ajout de padding */
-    width: 100%;
-    box-sizing: border-box;
-    transition: opacity 0.3s ease;
-    display: flex; /* Active le flexbox */
-    align-items: center; /* Centre verticalement les éléments */
-    justify-content: space-between; /* Espace entre les éléments */
-    height: auto;
+    position: relative;
+}
 
-    .logo {
-        img {
-            max-width: 22%; /* Taille du logo */
-            height: auto;
-            transition: filter 0.3s ease, transform 0.3s ease;
-            cursor: pointer;
+.logo {
+    flex: 1; /* Permet au logo de s'adapter */
+    display: flex;
+    justify-content: flex-start; /* Place le logo à gauche */
+    align-items: center;
 
-            &:hover {
-                filter: brightness(0.7);
-                transform: scale(1.1); // Effet d'agrandissement
-            }
-        }
+    img {
+        height: 50px; /* Ajuste la taille selon tes besoins */
+        max-width: 100%; /* Empêche l'image de déborder */
     }
+}
 
-    .content {
-        flex-grow: 1;
-        text-align: center;
-    }
+.content {
+    flex: 2; /* Permet au texte de prendre l'espace nécessaire */
+    display: flex;
+    justify-content: center; /* Centre le texte horizontalement */
+    align-items: center; /* Centre le texte verticalement */
+    
+    padding: 0 20px; /* Ajoute un peu d’espace pour éviter les débordements */
+    white-space: nowrap; /* Empêche le texte de se casser sur plusieurs lignes inutilement */
+}
 
-    .social-links {
-        display: flex; /* Flex pour les icônes */
-        gap: 15px; /* Espacement entre les icônes */
-        align-items: center; /* Alignement vertical des icônes */
+.social-links {
+    flex: 1; /* Permet aux icônes sociales de s'adapter */
+    display: flex;
+    justify-content: flex-end; /* Aligne les icônes à droite */
+    align-items: center;
+    gap: 15px;
 
-        a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #F1F5F9;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 0.5rem;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+    a {
+        color: #e3b878; /* Icônes avec une teinte dorée */
+        transition: color 0.3s ease;
 
-            svg {
-                width: 50px; /* Taille des icônes */
-                height: 30px;
-                transition: transform 0.3s ease;
-
-                &:hover {
-                    transform: scale(1.1); /* Agrandissement au survol */
-                }
-            }
-
-            &:hover {
-                background-color: #1f2039;
-                color: #F1F5F9;
-            }
+        &:hover {
+            color: #c49a5a; /* Effet doré plus clair au survol */
         }
     }
 }

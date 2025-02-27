@@ -22,6 +22,7 @@
 
 .main-content {
   .content {
+    display: block; // Passe en mode bloc pour centrer verticalement
     position: absolute;
     bottom: 36px; // Garde la position verticale d'origine
     left: 50%; // Centre horizontalement par rapport au parent
@@ -31,7 +32,7 @@
     color: #ffffff;
     padding: 40px;
     border-radius: 8px;
-    max-width: 445px;
+   
     text-align: center; // Centre le texte horizontalement
 
     h2 {
