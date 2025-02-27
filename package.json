@@ -10,9 +10,9 @@
   },
   "dependencies": {
     "@splidejs/splide": "^4.1.4",
-    "framer-motion": "^12.0.6",
+    "framer-motion": "^12.4.7",
     "gsap": "^3.12.7",
-    "next": "15.1.4",
+    "next": "^15.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0",
