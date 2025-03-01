@@ -639,25 +639,25 @@ a:hover {
 }
 
 /* Contenu de la modale */
-.modal-content {
-  background: #121212; /* Fond totalement cohérent avec ton site */
-  color: #e4e4e4; /* Texte plus lumineux pour un bon contraste */
-  padding: 40px;
-  border-radius: 20px;
-  max-width: 900px;
-  width: 90%;
-  max-height: 90vh;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
-  position: relative;
-  text-align: center;
-  transform: translateY(-20px);
-  animation: slideIn 0.4s ease-out forwards;
-  overflow: hidden; /* Supprime le scroll inutile */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
-}
+  .modal-content {
+    background: #121212; /* Fond totalement cohérent avec ton site */
+    color: #e4e4e4; /* Texte plus lumineux pour un bon contraste */
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 900px;
+    width: 90%;
+    max-height: 90vh;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+    position: relative;
+    text-align: center;
+    transform: translateY(-20px);
+    animation: slideIn 0.4s ease-out forwards;
+    overflow: hidden; /* Supprime le scroll inutile */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
 
 /* Animation d’entrée */
 @keyframes slideIn {
@@ -686,7 +686,7 @@ a:hover {
 
 .close-btn:hover {
   transform: scale(1.2);
-  color: #ff85c2; /* Effet rose subtil */
+  color: #c49a5a;
 }
 
 /* Style du titre */
@@ -695,7 +695,7 @@ a:hover {
   margin-bottom: 15px;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
-  color: #a5b4fc; /* Bleu doux pour rester dans ton esthétique */
+  color: #926d27;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   text-shadow: 0 2px 12px rgba(165, 180, 252, 0.5);
