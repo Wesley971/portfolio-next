@@ -14,3 +14,36 @@ html, body {
     width: 100%;
     background: black;
 }
+@font-face {
+    font-family: 'Montier';
+    src: url('/fonts/Montier-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Montier';
+    src: url('/fonts/Montier-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'MontierFlared';
+    src: url('/fonts/MontierFlared-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'MontierFlared';
+    src: url('/fonts/MontierFlared-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  /* Appliquer la police par défaut */
+  body {
+    font-family: 'Montier', serif;
+  }
+  
