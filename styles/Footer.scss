@@ -20,8 +20,16 @@
     align-items: center;
 
     img {
+        
         height: 50px; /* Ajuste la taille selon tes besoins */
         max-width: 100%; /* Empêche l'image de déborder */
+        transition: filter 0.3s ease, transform 0.3s ease; // Effet de survol
+      cursor: pointer;
+      &:hover {
+        filter: brightness(0.7);
+        transform: scale(1.1); // Effet d'agrandissement
+      }
+
     }
 }
 

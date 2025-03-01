@@ -1,5 +1,5 @@
 .header {
-  background: linear-gradient(135deg, black,#121212, black); // Couleurs plus sobres
+  background: black; // Couleurs plus sobres
   color: #F1F5F9; // Texte plus clair pour un meilleur contraste
   padding: 15px 0;
   display: flex;
@@ -13,6 +13,8 @@
   top: 0;
   transition: background 0.3s ease, opacity 0.3s ease;
   height: auto;
+  margin: 0 auto;
+  max-width: 2500px;
 
   .logo {
     img {
@@ -37,22 +39,74 @@
       padding: 0;
       font-size: 1.2rem;
 
-      li {
-        a {
-          color: #CBD5E1; // Couleur du texte douce et harmonieuse
-          text-decoration: none;
-          padding: 8px 12px;
-          border-radius: 5px;
-          transition: color 0.3s ease, transform 0.3s ease;
+      li a {
+  color: #e3b878;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
 
-          &:hover {
-            
-            color: #F1F5F9; // Texte plus clair au survol
-            transform: scale(1.1); // Agrandissement du texte au survol
-            background-color: #3b2a17; // Fond plus foncé au survols
-          }
-        }
-      }
+li a:hover {
+  color: #e3b878;
+  background-color: #3b2a17;
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Effet soulignement fluide */
+li a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #F1F5F9;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+li a:hover::after {
+  width: 100%;
+  left: 0;
+}
+li a {
+  color: #e3b878;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+li a:hover {
+  color: #F1F5F9;
+  background-color: #3b2a17;
+  transform: scale(1.1);
+}
+
+/* Effet soulignement fluide */
+li a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #3b2a17;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+li a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+
     }
   }
 
