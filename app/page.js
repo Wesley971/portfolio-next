@@ -11,6 +11,9 @@ export default function HomePage() {
   const [projects, setProjects] = useState([]);
   const [error, setError] = useState(null);
   const [selectedProject, setSelectedProject] = useState(null);
+  const closeModal = () => {
+    setSelectedProject(null);
+  }
 
   useEffect(() => {
     setRandomText(welcomeTexts[Math.floor(Math.random() * welcomeTexts.length)]);
@@ -110,30 +113,46 @@ export default function HomePage() {
           </section>
 
           <section id="illustrations">
-            <h2>Découvrez mes projets</h2>
-            {error ? (
-              <p className="error-message">{error}</p>
-            ) : (
-              <div className="projects-grid">
-                {projects.length > 0 ? (
-                  projects.map((project) => (
-                    <div
-                      key={project.id}
-                      className="project-card"
-                      onClick={() => setSelectedProject(project)}
-                    >
-                      <img src={project.projectPageImage} alt={project.title} />
-                      <div className="overlay">
-                        <p>{project.title}</p>
-                      </div>
-                    </div>
-                  ))
-                ) : (
-                  <p>Chargement des projets...</p>
-                )}
+      <h2>Découvrez mes projets</h2>
+      {error ? (
+        <p className="error-message">{error}</p>
+      ) : (
+        <div className="projects-grid">
+          {projects.length > 0 ? (
+            projects.map((project) => (
+              <div
+                key={project.id}
+                className="project-card"
+                onClick={() => setSelectedProject(project)}
+              >
+                <img src={project.projectPageImage} alt={project.title} />
+                <div className="overlay">
+                  <p>{project.title}</p>
+                </div>
               </div>
-            )}
-          </section>
+            ))
+          ) : (
+            <p>Chargement des projets...</p>
+          )}
+        </div>
+      )}
+
+      {selectedProject && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-btn" onClick={closeModal}>&times;</button>
+            <h2>{selectedProject.title}</h2>
+            <img src={selectedProject.projectPageImage} alt={selectedProject.title} />
+            <p>{selectedProject.description}</p>
+            <div className="modal-action">
+              <button onClick={() => window.open(selectedProject.link, '_blank')}>
+                Voir le projet
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </section>
 
             <section id="contact">
               <h2>Contactez-moi</h2>

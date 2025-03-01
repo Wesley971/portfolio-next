@@ -716,11 +716,11 @@ a:hover {
 .modal-content img {
   width: 100%;
   max-height: 75vh;
-  object-fit: contain; /* Affiche l’image sans déformation */
+  object-fit: contain;
   border-radius: 15px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
   margin-bottom: 20px;
-  border: 2px solid rgba(165, 180, 252, 0.3);
+  border: 2px solid #c49a5a;
 }
 
 /* Ajout d’un bouton d’action sous la modale */
@@ -729,7 +729,7 @@ a:hover {
 }
 
 .modal-action button {
-  background: linear-gradient(120deg, #6c63ff, #8e86b5);
+  background: linear-gradient(120deg, #926d27, #c49a5a);
   padding: 12px 24px;
   font-size: 1.2rem;
   font-weight: bold;
@@ -742,7 +742,7 @@ a:hover {
 
 .modal-action button:hover {
   transform: scale(1.05);
-  background: linear-gradient(120deg, #8e86b5, #6c63ff);
+  background: linear-gradient(120deg, #c49a5a, #926d27);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 .fade-in {
