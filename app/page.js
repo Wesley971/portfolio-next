@@ -29,9 +29,20 @@ export default function HomePage() {
 
   const handleStartAnimation = () => {
     setStartAnimation(true);
-    sessionStorage.setItem('hasSeenIntro', 'true'); // Marquer comme vu
-    setTimeout(() => setShowContent(true), 800); // Lancer le contenu avec un léger délai pour la transition
+    sessionStorage.setItem('hasSeenIntro', 'true'); // Marquer l'intro comme terminée
+  
+    // Envoyer un signal pour dire que l’intro est finie
+    window.dispatchEvent(new Event('introFinished'));
+  
+    setTimeout(() => {
+      setShowContent(true); // Afficher le contenu principal
+      window.dispatchEvent(new Event('contentReady')); // Dire que le contenu est chargé
+    }, 800); // Correspond au timing du couvercle
   };
+  
+  
+  
+  
 
   useEffect(() => {
     let isMounted = true;
