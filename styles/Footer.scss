@@ -11,51 +11,74 @@
     color: #e3b878; /* Texte légèrement doré */
     font-size: 1rem;
     position: relative;
-}
-
-.logo {
-    flex: 1; /* Permet au logo de s'adapter */
-    display: flex;
-    justify-content: flex-start; /* Place le logo à gauche */
-    align-items: center;
-
-    img {
-        
-        height: 50px; /* Ajuste la taille selon tes besoins */
-        max-width: 100%; /* Empêche l'image de déborder */
-        transition: filter 0.3s ease, transform 0.3s ease; // Effet de survol
-      cursor: pointer;
-      &:hover {
-        filter: brightness(0.7);
-        transform: scale(1.1); // Effet d'agrandissement
-      }
-
-    }
-}
-
-.content {
-    flex: 2; /* Permet au texte de prendre l'espace nécessaire */
-    display: flex;
-    justify-content: center; /* Centre le texte horizontalement */
-    align-items: center; /* Centre le texte verticalement */
     
-    padding: 0 20px; /* Ajoute un peu d’espace pour éviter les débordements */
-    white-space: nowrap; /* Empêche le texte de se casser sur plusieurs lignes inutilement */
-}
-
-.social-links {
-    flex: 1; /* Permet aux icônes sociales de s'adapter */
-    display: flex;
-    justify-content: flex-end; /* Aligne les icônes à droite */
-    align-items: center;
-    gap: 15px;
-
-    a {
-        color: #e3b878; /* Icônes avec une teinte dorée */
-        transition: color 0.3s ease;
-
+    .logo {
+      flex: 1;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+  
+      img {
+        height: 50px;
+        max-width: 100%;
+        transition: filter 0.3s ease, transform 0.3s ease;
+        cursor: pointer;
+  
         &:hover {
-            color: #c49a5a; /* Effet doré plus clair au survol */
+          filter: brightness(0.7);
+          transform: scale(1.1);
         }
+      }
     }
-}
+  
+    .content {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
+      white-space: nowrap;
+    }
+  
+    .social-links {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 15px;
+  
+      a {
+        color: #e3b878;
+        transition: color 0.3s ease;
+  
+        &:hover {
+          color: #c49a5a;
+        }
+      }
+    }
+  }
+  
+  /* Responsive : cacher logo et texte, centrer les liens sociaux */
+  @media (max-width: 768px) {
+    .footer {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 15px 0;
+      .social-links {
+      justify-content: center; /* Centre les icônes */
+      width: 100%;
+      gap: 20px; /* Ajustement de l’espacement */
+      justify-content: center;
+    }
+    }
+  
+    .logo,
+    .content {
+      display: none; /* Cache le logo et le texte */
+    }
+  
+    
+  }
+  

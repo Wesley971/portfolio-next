@@ -425,13 +425,14 @@ a:hover {
     justify-content: center;
     align-items: center;
     height: 96vh;
+
     .welcome-container {
-      h1 {
-        font-size: 1.8rem;
+      .welcome-text {
+        font-size: 1.8rem; /* Défini pour mobile */
         text-align: center;
         line-height: 1.5;
       }
-
+      
       .cta-button {
         font-size: 1rem;
         padding: 10px 20px;
@@ -442,12 +443,12 @@ a:hover {
 
   #about {
     flex-direction: column;
-    text-align: center;
     gap: 20px;
     height: auto;
+    padding-left: 30px;
 
     &-text {
-      max-width: 90%;
+      width: 80%;
       margin: 0 auto;
     }
 
@@ -457,11 +458,6 @@ a:hover {
 
     p {
       font-size: 1rem;
-    }
-
-    ul {
-      width: 100%;
-      text-align: center;
     }
 
     img {
@@ -479,7 +475,6 @@ a:hover {
 
     .projects-grid {
       grid-template-columns: 1fr; /* Une seule colonne */
-      gap: 20px;
     }
   }
 
@@ -496,41 +491,40 @@ a:hover {
       margin-bottom: 20px;
     }
 
-    form {
-      .form-group {
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      button[type="submit"] {
-        width: 100%;
-        font-size: 1rem;
-      }
+    form .form-group {
+      flex-direction: column;
+      gap: 20px;
     }
+    form button[type="submit"] {
+      width: 100%;
+      font-size: 1rem;
+    }
+    
   }
 }
 
 // Appareils moyens (max-width: 1024px)
 @media (max-width: 1024px) {
-  .fullscreen {
-    .welcome-container {
-      h1 {
-        font-size: 2.2rem;
-      }
+  .fullscreen .welcome-container {
+    h1 {
+      font-size: 2rem; /* Augmentation légère */
+    }
 
-      .cta-button {
-        font-size: 1.1rem;
-        padding: 12px 24px;
-      }
+    .cta-button {
+      padding: 12px 24px;
     }
   }
 
   #about {
     gap: 15px;
-
+    
     &-text {
       max-width: 80%;
       text-align: center;
+    }
+
+    h1 {
+      font-size: 1.8rem; /* Assurer une transition */
     }
 
     img {
@@ -538,38 +532,33 @@ a:hover {
     }
   }
 
-  #illustrations {
-    .projects-grid {
-      grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
-      gap: 20px;
-    }
-
-    h2 {
-      font-size: 1.6rem;
-    }
+  #illustrations h2 {
+    font-size: 1.8rem; /* Uniformisation */
   }
 
-  #contact {
-    form {
-      .form-group {
-        gap: 30px;
-      }
-    }
+  #illustrations .projects-grid {
+    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
+  }
+
+  #contact h2 {
+    font-size: 2rem; /* Ajustement */
+  }
+
+  #contact form .form-group {
+    gap: 30px;
   }
 }
 
-// Appareils larges (au-dessus de 1024px)
+// Appareils larges (min-width: 1025px)
 @media (min-width: 1025px) {
-  .fullscreen {
-    .welcome-container {
-      h1 {
-        font-size: 3rem;
-      }
+  .fullscreen .welcome-container {
+    h1 {
+      font-size: 3rem;
+    }
 
-      .cta-button {
-        font-size: 1.2rem;
-        padding: 15px 30px;
-      }
+    .cta-button {
+      font-size: 1.2rem;
+      padding: 15px 30px;
     }
   }
 
@@ -581,33 +570,42 @@ a:hover {
       max-width: 50%;
     }
 
+    h1 {
+      font-size: 2.2rem; /* Uniformiser */
+    }
+
     img {
       width: 300px;
     }
   }
 
-  #illustrations {
-    .projects-grid {
-      grid-template-columns: repeat(3, 1fr); /* Trois colonnes */
-    }
+  #illustrations h2 {
+    font-size: 2.2rem;
   }
 
-  #contact {
-    form {
-      max-width: 800px;
+  #illustrations .projects-grid {
+    grid-template-columns: repeat(3, 1fr); /* Trois colonnes */
+  }
 
-      .form-group {
-        flex-direction: row;
-        gap: 50px;
-      }
+  #contact h2 {
+    font-size: 2.4rem;
+  }
 
-      button[type="submit"] {
-        width: auto;
-        font-size: 1.2rem;
-      }
-    }
+  #contact form {
+    max-width: 800px;
+  }
+
+  #contact form .form-group {
+    flex-direction: row;
+    gap: 50px;
+  }
+
+  #contact button[type="submit"] {
+    width: auto;
+    font-size: 1.2rem;
   }
 }
+
 /* ============================= */
 /* Modale - Version ultra premium et cohérente */
 /* ============================= */
