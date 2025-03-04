@@ -350,14 +350,7 @@
   }
 }
 
-// Responsive Design
-@media (max-width: 768px) {
-  #contact form .form-nom-email {
-    flex-direction: column;
-  }
-}
-
-
+// Liens
 a {
   color: #926d27;
   text-decoration: none;
@@ -367,7 +360,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Animation d'écriture */
+// Animations globales
 @keyframes typing {
   from {
     width: 0;
@@ -377,7 +370,6 @@ a:hover {
   }
 }
 
-/* Clignotement du curseur */
 @keyframes blink {
   from,
   to {
@@ -388,9 +380,8 @@ a:hover {
   }
 }
 
-/* Animation de la main 👋 */
 @keyframes waving-hand {
-  0% {
+  0%, 100% {
     transform: rotate(0deg);
   }
   10% {
@@ -411,33 +402,43 @@ a:hover {
   60% {
     transform: rotate(0deg);
   }
-  100% {
-    transform: rotate(0deg);
+}
+
+// Responsive Design
+// Petits appareils (max-width: 425px)
+@media (max-width: 425px) {
+  .fullscreen .welcome-container {
+    .welcome-text {
+      font-size: 1.5rem;
+    }
+
+    .cta-button {
+      font-size: 0.8rem;
+    }
   }
 }
-// Responsive Design Centralisé
 
-// Petits appareils (max-width: 768px)
+// Appareils moyens (max-width: 768px)
 @media (max-width: 768px) {
   .fullscreen {
-    padding: 20px;
+    padding-bottom: 45px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 96vh;
+  }
 
-    .welcome-container {
-      .welcome-text {
-        font-size: 1.8rem; /* Défini pour mobile */
-        text-align: center;
-        line-height: 1.5;
-      }
-      
-      .cta-button {
-        font-size: 1rem;
-        padding: 10px 20px;
-        margin-top: 15px;
-      }
+  .fullscreen .welcome-container {
+    .welcome-text {
+      font-size: 1.8rem;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .cta-button {
+      font-size: 1rem;
+      padding: 10px 20px;
+      margin-top: 15px;
     }
   }
 
@@ -467,14 +468,12 @@ a:hover {
   }
 
   #illustrations {
-    
-
     h2 {
       font-size: 1.5rem;
     }
 
     .projects-grid {
-      grid-template-columns: 1fr; /* Une seule colonne */
+      grid-template-columns: 1fr;
     }
   }
 
@@ -495,19 +494,19 @@ a:hover {
       flex-direction: column;
       gap: 20px;
     }
+
     form button[type="submit"] {
       width: 100%;
       font-size: 1rem;
     }
-    
   }
 }
 
-// Appareils moyens (max-width: 1024px)
+// Appareils larges (max-width: 1024px)
 @media (max-width: 1024px) {
   .fullscreen .welcome-container {
     h1 {
-      font-size: 2rem; /* Augmentation légère */
+      font-size: 2rem;
     }
 
     .cta-button {
@@ -518,14 +517,14 @@ a:hover {
   #about {
     padding: 20px;
     flex-wrap: nowrap;
-    
+
     &-text {
       max-width: 80%;
       text-align: center;
     }
 
     h1 {
-      font-size: 1.8rem; /* Assurer une transition */
+      font-size: 1.8rem;
     }
 
     img {
@@ -533,24 +532,28 @@ a:hover {
     }
   }
 
-  #illustrations h2 {
-    font-size: 1.8rem; /* Uniformisation */
+  #illustrations {
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
-  #illustrations .projects-grid {
-    grid-template-columns: repeat(2, 1fr); /* Deux colonnes */
-  }
+  #contact {
+    h2 {
+      font-size: 2rem;
+    }
 
-  #contact h2 {
-    font-size: 2rem; /* Ajustement */
-  }
-
-  #contact form .form-group {
-    gap: 30px;
+    form .form-group {
+      gap: 30px;
+    }
   }
 }
 
-// Appareils larges (min-width: 1025px)
+// Appareils très larges (min-width: 1025px)
 @media (min-width: 1025px) {
   .fullscreen .welcome-container {
     h1 {
@@ -573,7 +576,7 @@ a:hover {
     }
 
     h1 {
-      font-size: 2.2rem; /* Uniformiser */
+      font-size: 2.2rem;
     }
 
     img {
@@ -581,32 +584,37 @@ a:hover {
     }
   }
 
-  #illustrations h2 {
-    font-size: 2.2rem;
+  #illustrations {
+    h2 {
+      font-size: 2.2rem;
+    }
+
+    .projects-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
-  #illustrations .projects-grid {
-    grid-template-columns: repeat(3, 1fr); /* Trois colonnes */
-  }
+  #contact {
+    h2 {
+      font-size: 2.4rem;
+    }
 
-  #contact h2 {
-    font-size: 2.4rem;
-  }
+    form {
+      max-width: 800px;
+    }
 
-  #contact form {
-    max-width: 800px;
-  }
+    form .form-group {
+      flex-direction: row;
+      gap: 50px;
+    }
 
-  #contact form .form-group {
-    flex-direction: row;
-    gap: 50px;
-  }
-
-  #contact button[type="submit"] {
-    width: auto;
-    font-size: 1.2rem;
+    button[type="submit"] {
+      width: auto;
+      font-size: 1.2rem;
+    }
   }
 }
+
 
 /* ============================= */
 /* Modale - Version ultra premium et cohérente */
