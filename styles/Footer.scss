@@ -3,7 +3,7 @@
     justify-content: center; /* Centre horizontalement tout le contenu */
     align-items: center; /* Centre verticalement */
     text-align: center; /* Centre le texte à l'intérieur */
-    width: 100%; /* Occupe toute la largeur */
+    
     max-width: 1200px; /* Empêche un débordement sur les très grands écrans */
     margin: 0 auto; /* Centre le footer sur la page */
     padding: 20px;
@@ -68,7 +68,7 @@
       padding: 15px 0;
       .social-links {
       justify-content: center; /* Centre les icônes */
-      width: 100%;
+      
       gap: 20px; /* Ajustement de l’espacement */
       justify-content: center;
     }

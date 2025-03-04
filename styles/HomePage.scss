@@ -311,7 +311,7 @@
         color: #ffffff;
         outline: none;
         transition: border-color 0.3s ease;
-        width: 100%;
+        
 
         &:focus {
           border-color: #926d27;
@@ -467,7 +467,7 @@ a:hover {
   }
 
   #illustrations {
-    padding: 20px 10px;
+    
 
     h2 {
       font-size: 1.5rem;
@@ -516,7 +516,8 @@ a:hover {
   }
 
   #about {
-    gap: 15px;
+    padding: 20px;
+    flex-wrap: nowrap;
     
     &-text {
       max-width: 80%;
@@ -564,7 +565,8 @@ a:hover {
 
   #about {
     flex-direction: row;
-    gap: 40px;
+    padding: 20px;
+    flex-wrap: nowrap;
 
     &-text {
       max-width: 50%;
