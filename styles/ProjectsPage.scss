@@ -1,71 +1,185 @@
 .fullscreen-carousel {
   padding: 0;
+  width: 100%;
+}
+
+#main-slider {
+  min-height: 50vh; // Pour éviter que le slider soit trop petit
 }
 
 .splide__slide {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-size: cover; // Étire l'image pour qu'elle corresponde au conteneur
-  background-position: center; // Centre l'image
+  background-size: cover;
+  background-position: center;
 }
 
 .carousel-slide {
-  width: 66%; // Conserve la largeur définie
-  height: 70%; // Conserve la hauteur définie
+  width: 66%;
+  height: 70%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 20px;
-  position: relative; // Nécessaire pour le positionnement absolu de `.content`
+  position: relative;
 }
 
-.main-content {
-  .content {
-    display: block; // Passe en mode bloc pour centrer verticalement
-    position: absolute;
-    bottom: 36px; // Garde la position verticale d'origine
-    left: 50%; // Centre horizontalement par rapport au parent
-    transform: translateX(-50%); // Recentre parfaitement horizontalement
-    background: rgba(56, 38, 22, 0.9); // Fond semi-transparent
+.carousel-slide .content {
+  display: block;
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(56, 38, 22, 0.9);
+  color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 80%; // Pour éviter que le texte soit trop large
 
+  h2 {
+    margin: 0 0 10px;
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+
+  p {
+    margin: 0 0 10px;
+    font-size: 2rem;
+    line-height: 1.4;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
     color: #ffffff;
-    padding: 40px;
-    border-radius: 8px;
-   
-    text-align: center; // Centre le texte horizontalement
+    background-color: #926d27;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 
-    h2 {
-      margin: 0 0 10px;
-      font-size: 2.2rem;
-      font-weight: bold;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); // Ajoute une ombre au texte
-    }
-
-    p {
-      margin: 0 0 10px;
-      font-size: 2rem;
-      line-height: 1.4;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); // Ajoute une ombre légère pour le texte descriptif
-    }
-
-    a {
-      display: inline-block;
-      padding: 10px 20px;
-      font-size: 0.875rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: #ffffff;
-      background-color: #926d27;
-      border-radius: 6px;
-      transition: background-color 0.3s;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); // Ombre pour améliorer la lisibilité du lien
-
-      &:hover {
-        background-color: #a37a3a;
-      }
+    &:hover {
+      background-color: #a37a3a;
     }
   }
 }
 
+/* Responsive Design */
+
+// 🖥️ Tablettes (768px - 1024px)
+@media (max-width: 1024px) {
+  .carousel-slide {
+    width: 75%;
+    height: 68%;
+  }
+
+  .carousel-slide .content {
+    padding: 35px;
+    bottom: 30px;
+    max-width: 75%;
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+
+    a {
+      font-size: 0.85rem;
+      padding: 12px 22px;
+    }
+  }
+}
+// 📱 Mobiles standards (425px - 768px)
+@media (max-width: 768px) {
+  .carousel-slide {
+    width: 80%;
+    height: 65%;
+    border-radius: 16px;
+  }
+
+  .carousel-slide .content {
+    padding: 30px;
+    bottom: 20px; // Ajustement pour améliorer la lisibilité
+    max-width: 85%;
+
+    h2 {
+      font-size: 1.6rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.3;
+    }
+
+    a {
+      font-size: 0.8rem;
+      padding: 10px 18px;
+    }
+  }
+}
+// 📱 Petits mobiles (<425px)
+@media (max-width: 425px) {
+  .carousel-slide {
+    width: 92%;
+    height: 100%;
+    border-radius: 12px;
+  }
+
+  .carousel-slide .content {
+    padding: 15px;
+    bottom: 10px; // Ajustement pour éviter que le texte soit trop bas
+    max-width: 90%;
+
+    h2 {
+      font-size: 1rem;
+    }
+
+    p {
+      font-size: 0.8rem;
+      line-height: 1.3;
+    }
+
+    a {
+      font-size: 0.75rem;
+      padding: 8px 16px;
+    }
+  }
+}
+
+
+// 🖥️ Grands écrans (>1024px)
+@media (min-width: 1025px) {
+  .carousel-slide {
+    width: 66%;
+    height: 70%;
+  }
+
+  .carousel-slide .content {
+    padding: 40px;
+    bottom: 36px;
+    max-width: 80%;
+
+    h2 {
+      font-size: 2.2rem;
+    }
+
+    p {
+      font-size: 2rem;
+    }
+
+    a {
+      font-size: 0.875rem;
+      padding: 10px 20px;
+    }
+  }
+}

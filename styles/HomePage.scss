@@ -403,20 +403,58 @@ a:hover {
     transform: rotate(0deg);
   }
 }
-
-// Responsive Design
-// Petits appareils (max-width: 425px)
-@media (max-width: 425px) {
+// Appareils larges (max-width: 1024px)
+@media (max-width: 1024px) {
   .fullscreen .welcome-container {
-    .welcome-text {
-      font-size: 1.5rem;
+    h1 {
+      font-size: 2rem;
     }
 
     .cta-button {
-      font-size: 0.8rem;
+      padding: 12px 24px;
+    }
+  }
+
+  #about {
+    padding: 20px;
+    flex-wrap: nowrap;
+
+    &-text {
+      max-width: 80%;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    img {
+      width: 250px;
+    }
+  }
+
+  #illustrations {
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  #contact {
+    h2 {
+      font-size: 2rem;
+    }
+
+    form .form-group {
+      gap: 30px;
     }
   }
 }
+// Responsive Design
+
 
 // Appareils moyens (max-width: 768px)
 @media (max-width: 768px) {
@@ -501,57 +539,19 @@ a:hover {
     }
   }
 }
-
-// Appareils larges (max-width: 1024px)
-@media (max-width: 1024px) {
+// Petits appareils (max-width: 425px)
+@media (max-width: 425px) {
   .fullscreen .welcome-container {
-    h1 {
-      font-size: 2rem;
+    .welcome-text {
+      font-size: 1.5rem;
     }
 
     .cta-button {
-      padding: 12px 24px;
-    }
-  }
-
-  #about {
-    padding: 20px;
-    flex-wrap: nowrap;
-
-    &-text {
-      max-width: 80%;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 1.8rem;
-    }
-
-    img {
-      width: 250px;
-    }
-  }
-
-  #illustrations {
-    h2 {
-      font-size: 1.8rem;
-    }
-
-    .projects-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  #contact {
-    h2 {
-      font-size: 2rem;
-    }
-
-    form .form-group {
-      gap: 30px;
+      font-size: 0.8rem;
     }
   }
 }
+
 
 // Appareils très larges (min-width: 1025px)
 @media (min-width: 1025px) {

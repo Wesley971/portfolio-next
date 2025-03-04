@@ -93,20 +93,19 @@ export default function ProjectsPage() {
             id="main-slider"
             className="splide"
             ref={mainSliderRef}
-            style={{ minHeight: '80vh' }} // Ajout d'un minHeight pour éviter le déplacement du footer
+            
           >
             <div className="splide__track">
               <ul className="splide__list">
                 {projects.map((project) => (
                   <li key={project.id} className="splide__slide">
                     <div
-                      className="carousel-slide"
-                      style={{
-                        backgroundImage: `url(${project.imageUrl})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                      }}
-                    >
+  className="carousel-slide"
+  style={{
+    backgroundImage: `url(${project.imageUrl})`,
+  }}
+>
+
                       <div className="content">
                         <h2>{project.title}</h2>
                         <p>{project.description}</p>
