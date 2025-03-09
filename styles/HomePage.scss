@@ -616,8 +616,8 @@ a:hover {
 }
 
 
-/* ============================= */
-/* Modale - Version ultra premium et cohérente */
+//* ============================= */
+/* Modale - Version ultra premium et responsive */
 /* ============================= */
 
 /* Fond semi-transparent avec effet de flou */
@@ -635,6 +635,7 @@ a:hover {
   opacity: 0;
   animation: fadeIn 0.3s forwards;
   overflow: hidden; /* Empêche tout débordement */
+  padding: 20px; /* Ajout d'un padding pour les petits écrans */
 }
 
 /* Effet d’apparition */
@@ -648,25 +649,24 @@ a:hover {
 }
 
 /* Contenu de la modale */
-  .modal-content {
-    background: #121212; /* Fond totalement cohérent avec ton site */
-    color: #e4e4e4; /* Texte plus lumineux pour un bon contraste */
-    padding: 40px;
-    border-radius: 20px;
-    max-width: 900px;
-    width: 90%;
-    max-height: 90vh;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
-    position: relative;
-    text-align: center;
-    transform: translateY(-20px);
-    animation: slideIn 0.4s ease-out forwards;
-    overflow: hidden; /* Supprime le scroll inutile */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-  }
+.modal-content {
+  background: #121212; /* Fond totalement cohérent avec ton site */
+  color: #e4e4e4; /* Texte plus lumineux pour un bon contraste */
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 900px;
+  width: 90%;
+  max-height: 85vh;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+  position: relative;
+  text-align: center;
+  transform: translateY(-20px);
+  animation: slideIn 0.4s ease-out forwards;
+  overflow: auto; /* Permet un scroll si nécessaire */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 /* Animation d’entrée */
 @keyframes slideIn {
@@ -683,8 +683,8 @@ a:hover {
 /* Bouton de fermeture */
 .close-btn {
   position: absolute;
-  top: 15px;
-  right: 20px;
+  top: 10px;
+  right: 15px;
   border: none;
   background: none;
   font-size: 28px;
@@ -702,7 +702,6 @@ a:hover {
 .modal-content h2 {
   font-size: 2rem;
   margin-bottom: 15px;
-  
   font-weight: bold;
   color: #926d27;
   text-transform: uppercase;
@@ -714,7 +713,6 @@ a:hover {
 .modal-content p {
   font-size: 1.3rem;
   line-height: 1.6;
-  
   margin-bottom: 20px;
   text-align: center;
   color: #d1d5db;
@@ -723,8 +721,8 @@ a:hover {
 
 /* Image du projet - Maximisée et immersive */
 .modal-content img {
-  width: 100%;
-  max-height: 75vh;
+  width: 98%;
+  max-height: 60vh; /* Ajustement de la hauteur max */
   object-fit: contain;
   border-radius: 15px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
@@ -754,6 +752,8 @@ a:hover {
   background: linear-gradient(120deg, #c49a5a, #926d27);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
+
+/* Animations */
 .fade-in {
   opacity: 0;
   animation: fadeIn 0.8s ease-in-out forwards;
@@ -768,15 +768,6 @@ a:hover {
   display: none;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 @keyframes zoomIn {
   from {
     transform: scale(0.8);
@@ -785,3 +776,57 @@ a:hover {
     transform: scale(1);
   }
 }
+
+/* ============================= */
+/* RESPONSIVE DESIGN */
+/* ============================= */
+
+// Appareils larges (max-width: 1024px)
+@media (max-width: 1024px) {
+  .modal-content {
+    display: block;
+    width: 60%;
+  }
+
+}
+
+/* ============================= */
+/* Navigation Minimaliste et Élégante */
+/* ============================= */
+
+.modal-navigation {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  right: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateY(-50%);
+  pointer-events: none; /* Désactive l'interaction en dehors des boutons */
+}
+
+.modal-navigation button {
+  background: transparent;
+  border: none;
+  color: #e4e4e4; /* Blanc doux pour l’icône */
+  font-size: 50px; /* Taille du chevron */
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, color 0.2s;
+  pointer-events: auto; /* Active l'interaction */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.modal-navigation button:hover {
+  color: #c49a5a; /* Doré subtil au survol */
+  transform: scale(1.2);
+}
+
+.modal-navigation button:active {
+  transform: scale(0.95);
+}
+
+
