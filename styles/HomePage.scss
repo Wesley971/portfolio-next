@@ -510,9 +510,7 @@ a:hover {
       font-size: 1.5rem;
     }
 
-    .projects-grid {
-      grid-template-columns: 1fr;
-    }
+    
   }
 
   #contact {
@@ -550,6 +548,14 @@ a:hover {
       font-size: 0.8rem;
     }
   }
+  #illustrations {
+    
+
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
 }
 
 
@@ -722,8 +728,8 @@ a:hover {
 /* Image du projet - Maximisée et immersive */
 .modal-content img {
   width: 98%;
-  max-height: 60vh; /* Ajustement de la hauteur max */
-  object-fit: contain;
+  max-height: 50vh; /* Ajustement de la hauteur max */
+  object-fit: cover;
   border-radius: 15px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
   margin-bottom: 20px;
@@ -796,7 +802,7 @@ a:hover {
 
 .modal-navigation {
   position: absolute;
-  top: 50%;
+  top: 46%;
   left: 15px;
   right: 15px;
   display: flex;
@@ -828,5 +834,23 @@ a:hover {
 .modal-navigation button:active {
   transform: scale(0.95);
 }
-
-
+// Petits appareils (max-width: 768px)
+@media (max-width: 768px) {
+  .modal-navigation {
+    top: 42%;
+    button{
+      font-size: 40px;
+    }
+    
+  }
+}
+// Petits appareils (max-width: 425px)
+@media (max-width: 425px) {
+  .modal-navigation {
+    top: 36%;
+    button{
+      font-size: 35px;
+    }
+    
+  }
+}
