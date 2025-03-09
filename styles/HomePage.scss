@@ -190,10 +190,9 @@
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); // Toujours 3 colonnes
-    gap: 0; // Pas d’espace entre les cartes
+    gap: 50px; // Pas d’espace entre les cartes
     justify-content: center;
-    width: 100%;
-    max-width: 1200px; // Limite la largeur totale
+    
   }
 
   .project-card {
@@ -633,18 +632,18 @@ a:hover {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(18, 18, 18, 0.85); /* Sombre et immersif */
+  background: rgba(18, 18, 18, 0.85);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
   opacity: 0;
   animation: fadeIn 0.3s forwards;
-  overflow: hidden; /* Empêche tout débordement */
-  padding: 20px; /* Ajout d'un padding pour les petits écrans */
+  overflow: hidden;
+  
 }
 
-/* Effet d’apparition */
+/* Animation d’apparition */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -654,10 +653,13 @@ a:hover {
   }
 }
 
+/* ============================= */
 /* Contenu de la modale */
+/* ============================= */
+
 .modal-content {
-  background: #121212; /* Fond totalement cohérent avec ton site */
-  color: #e4e4e4; /* Texte plus lumineux pour un bon contraste */
+  background: #121212;
+  color: #e4e4e4;
   padding: 40px;
   border-radius: 20px;
   max-width: 900px;
@@ -668,7 +670,7 @@ a:hover {
   text-align: center;
   transform: translateY(-20px);
   animation: slideIn 0.4s ease-out forwards;
-  overflow: auto; /* Permet un scroll si nécessaire */
+  overflow: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -686,7 +688,10 @@ a:hover {
   }
 }
 
+/* ============================= */
 /* Bouton de fermeture */
+/* ============================= */
+
 .close-btn {
   position: absolute;
   top: 10px;
@@ -697,69 +702,78 @@ a:hover {
   cursor: pointer;
   color: #e4e4e4;
   transition: transform 0.2s ease-in-out, color 0.2s;
+
+  &:hover {
+    transform: scale(1.2);
+    color: #c49a5a;
+  }
 }
 
-.close-btn:hover {
-  transform: scale(1.2);
-  color: #c49a5a;
+/* ============================= */
+/* Contenu spécifique (Textes, images, boutons) */
+/* ============================= */
+
+.modal-content {
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #926d27;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 0 2px 12px rgba(165, 180, 252, 0.5);
+  }
+
+  p {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #d1d5db;
+    max-width: 700px;
+  }
+
+  img {
+    width: 98%;
+    max-height: 50vh;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+    margin-bottom: 20px;
+    border: 2px solid #c49a5a;
+  }
 }
 
-/* Style du titre */
-.modal-content h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-  font-weight: bold;
-  color: #926d27;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  text-shadow: 0 2px 12px rgba(165, 180, 252, 0.5);
-}
+/* ============================= */
+/* Bouton d’action sous la modale */
+/* ============================= */
 
-/* Style du texte */
-.modal-content p {
-  font-size: 1.3rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  text-align: center;
-  color: #d1d5db;
-  max-width: 700px;
-}
-
-/* Image du projet - Maximisée et immersive */
-.modal-content img {
-  width: 98%;
-  max-height: 50vh; /* Ajustement de la hauteur max */
-  object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
-  margin-bottom: 20px;
-  border: 2px solid #c49a5a;
-}
-
-/* Ajout d’un bouton d’action sous la modale */
 .modal-action {
   margin-top: 20px;
+
+  button {
+    background: linear-gradient(120deg, #926d27, #c49a5a);
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      background: linear-gradient(120deg, #c49a5a, #926d27);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+  }
 }
 
-.modal-action button {
-  background: linear-gradient(120deg, #926d27, #c49a5a);
-  padding: 12px 24px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-}
+/* ============================= */
+/* Animations supplémentaires */
+/* ============================= */
 
-.modal-action button:hover {
-  transform: scale(1.05);
-  background: linear-gradient(120deg, #c49a5a, #926d27);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-}
-
-/* Animations */
 .fade-in {
   opacity: 0;
   animation: fadeIn 0.8s ease-in-out forwards;
@@ -784,20 +798,7 @@ a:hover {
 }
 
 /* ============================= */
-/* RESPONSIVE DESIGN */
-/* ============================= */
-
-// Appareils larges (max-width: 1024px)
-@media (max-width: 1024px) {
-  .modal-content {
-    display: block;
-    width: 60%;
-  }
-
-}
-
-/* ============================= */
-/* Navigation Minimaliste et Élégante */
+/* Navigation minimaliste et élégante */
 /* ============================= */
 
 .modal-navigation {
@@ -809,48 +810,62 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   transform: translateY(-50%);
-  pointer-events: none; /* Désactive l'interaction en dehors des boutons */
+  pointer-events: none;
+
+  button {
+    background: transparent;
+    border: none;
+    color: #e4e4e4;
+    font-size: 50px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, color 0.2s;
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+
+    &:hover {
+      color: #c49a5a;
+      transform: scale(1.2);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+  }
 }
 
-.modal-navigation button {
-  background: transparent;
-  border: none;
-  color: #e4e4e4; /* Blanc doux pour l’icône */
-  font-size: 50px; /* Taille du chevron */
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out, color 0.2s;
-  pointer-events: auto; /* Active l'interaction */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 0;
+/* ============================= */
+/* Responsive Design */
+/* ============================= */
+
+// Tablettes et écrans moyens
+@media (max-width: 1024px) {
+  .modal-content {
+    display: block;
+    width: 60%;
+  }
 }
 
-.modal-navigation button:hover {
-  color: #c49a5a; /* Doré subtil au survol */
-  transform: scale(1.2);
-}
-
-.modal-navigation button:active {
-  transform: scale(0.95);
-}
-// Petits appareils (max-width: 768px)
+// Petits écrans (max-width: 768px)
 @media (max-width: 768px) {
   .modal-navigation {
     top: 42%;
-    button{
+
+    button {
       font-size: 40px;
     }
-    
   }
 }
-// Petits appareils (max-width: 425px)
+
+// Très petits écrans (max-width: 425px)
 @media (max-width: 425px) {
   .modal-navigation {
     top: 36%;
-    button{
+
+    button {
       font-size: 35px;
     }
-    
   }
 }
